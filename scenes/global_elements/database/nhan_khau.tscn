@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ded881c2nr58o"]
+
+[ext_resource type="Script" path="res://scenes/global_elements/database/nhan_khau.gd" id="1_h3aje"]
+
+[node name="NhanKhau" type="Node2D"]
+script = ExtResource("1_h3aje")

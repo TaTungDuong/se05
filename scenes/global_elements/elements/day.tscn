@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://525euufxrjmh"]
+
+[ext_resource type="Theme" uid="uid://cvxiiwjwnm8g" path="res://assets/resources/themes/theme_field.tres" id="1_ux5dm"]
+[ext_resource type="Script" path="res://scenes/global_elements/elements/day.gd" id="2_s0rwq"]
+
+[node name="Day" type="Button"]
+size_flags_horizontal = 3
+theme = ExtResource("1_ux5dm")
+theme_override_font_sizes/font_size = 18
+text = "1"
+script = ExtResource("2_s0rwq")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

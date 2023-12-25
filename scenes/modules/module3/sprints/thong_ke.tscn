@@ -1,0 +1,858 @@
+[gd_scene load_steps=29 format=3 uid="uid://cae2r7j6vxgc7"]
+
+[ext_resource type="Script" path="res://scenes/modules/module3/sprints/thong_ke.gd" id="1_baxdp"]
+[ext_resource type="Texture2D" uid="uid://cu3wmppuq54me" path="res://assets/sprites/ui/bg_white.png" id="2_7lqxi"]
+[ext_resource type="Theme" uid="uid://b0f85lxjcftcx" path="res://assets/resources/themes/theme_popup.tres" id="3_vvlvt"]
+[ext_resource type="Theme" uid="uid://brdiy7ttotod7" path="res://assets/resources/themes/theme_button.tres" id="4_i1mwa"]
+[ext_resource type="Theme" uid="uid://cvxiiwjwnm8g" path="res://assets/resources/themes/theme_field.tres" id="5_0057c"]
+[ext_resource type="Theme" uid="uid://6qdjft62ndn3" path="res://assets/resources/themes/theme_option.tres" id="6_eo24t"]
+[ext_resource type="Theme" uid="uid://cpltx4lyxm334" path="res://assets/resources/themes/theme_textinput.tres" id="7_t8843"]
+[ext_resource type="Theme" uid="uid://d076pw6j3i3cd" path="res://assets/resources/themes/theme_check.tres" id="8_0xxkt"]
+[ext_resource type="Texture2D" uid="uid://bplps3vy7w2lc" path="res://assets/sprites/ui/buttons/filter.png" id="8_gs58u"]
+[ext_resource type="Texture2D" uid="uid://dib2b4ivnvl4u" path="res://assets/sprites/ui/buttons/reload_white.png" id="9_2cgl5"]
+[ext_resource type="Texture2D" uid="uid://ugcbgupx7cya" path="res://assets/sprites/ui/buttons/open.png" id="10_dibvu"]
+[ext_resource type="Texture2D" uid="uid://ctqy0hrjjmicj" path="res://assets/sprites/ui/buttons/import.png" id="11_gq6mx"]
+[ext_resource type="Texture2D" uid="uid://c5n8m08ivk1gs" path="res://assets/sprites/ui/buttons/delete.png" id="12_ji5ut"]
+[ext_resource type="Texture2D" uid="uid://bklhwn6i50nru" path="res://assets/sprites/ui/buttons/delete_all.png" id="13_1f00e"]
+[ext_resource type="Texture2D" uid="uid://rvipcqnl28du" path="res://assets/sprites/ui/buttons/submenu_normal.png" id="14_me6ob"]
+[ext_resource type="PackedScene" uid="uid://4tpwkqip551a" path="res://scenes/global_elements/elements/table.tscn" id="15_jb7wk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6jrv"]
+bg_color = Color(0, 0.466667, 0.74902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58cxe"]
+bg_color = Color(0, 0.380392, 0.611765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g7nv"]
+bg_color = Color(0, 0.294118, 0.482353, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqlhi"]
+bg_color = Color(0, 0.304688, 0.5, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpfqe"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2ymx"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtmow"]
+bg_color = Color(0, 0.466667, 0.74902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlod6"]
+bg_color = Color(0, 0.380392, 0.611765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1b2n"]
+bg_color = Color(0, 0.294118, 0.482353, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sagc3"]
+bg_color = Color(0, 0.304688, 0.5, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gh2nu"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_q8p2t"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_gh2nu")
+
+[node name="ThongKe" type="VBoxContainer"]
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_baxdp")
+
+[node name="BgWhite" type="Sprite2D" parent="."]
+scale = Vector2(5, 2.78125)
+texture = ExtResource("2_7lqxi")
+centered = false
+
+[node name="Popup" type="Node2D" parent="."]
+
+[node name="PopupMenu" type="PopupMenu" parent="Popup"]
+title = "Warning!"
+initial_position = 1
+size = Vector2i(320, 160)
+unresizable = false
+borderless = false
+always_on_top = true
+theme = ExtResource("3_vvlvt")
+hide_on_item_selection = false
+item_count = 1
+item_0/text = "sdasdas"
+item_0/id = 0
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Popup"]
+title = "Xác nhận"
+initial_position = 1
+size = Vector2i(320, 160)
+always_on_top = true
+popup_window = true
+theme = ExtResource("3_vvlvt")
+ok_button_text = "Có"
+cancel_button_text = "Không"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Popup"]
+title = "Thông báo"
+initial_position = 1
+size = Vector2i(320, 160)
+always_on_top = true
+popup_window = true
+min_size = Vector2i(200, 70)
+theme = ExtResource("3_vvlvt")
+
+[node name="FileDialog" type="FileDialog" parent="Popup"]
+initial_position = 1
+size = Vector2i(720, 480)
+always_on_top = true
+theme = ExtResource("3_vvlvt")
+ok_button_text = "Lưu"
+cancel_button_text = "Hủy"
+access = 2
+filters = PackedStringArray(".csv; Excel files")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BufferTop" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BufferLeft" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="ThanhCongCu" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="PhanThuongCuoiNamHoc" type="Button" parent="VBoxContainer/HBoxContainer2/ThanhCongCu"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_i1mwa")
+toggle_mode = true
+button_pressed = true
+text = "Phần Thưởng Cuối Năm Học"
+
+[node name="PhanThuongDipDacBiet" type="Button" parent="VBoxContainer/HBoxContainer2/ThanhCongCu"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_i1mwa")
+toggle_mode = true
+text = "Phần Thưởng Dịp Đặc Biệt"
+
+[node name="BufferLeft2" type="PanelContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="TruongThongKe" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+tabs_visible = false
+
+[node name="PhanThuongCuoiNamHoc" type="HBoxContainer" parent="VBoxContainer/TruongThongKe"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BufferLeft" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="PanelContainer" type="VBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Buffer" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="TruongThongTin" type="VBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 4
+
+[node name="Buffer" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="NamHoc" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Năm"
+flat = true
+alignment = 0
+
+[node name="MaHoKhau" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Hộ Khẩu"
+flat = true
+alignment = 0
+
+[node name="MaNhanKhau" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Nhân Khẩu"
+flat = true
+alignment = 0
+
+[node name="Lop" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Lớp*"
+flat = true
+alignment = 0
+
+[node name="Truong" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Trường*"
+flat = true
+alignment = 0
+
+[node name="DanhHieu" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Danh Hiệu*"
+flat = true
+alignment = 0
+
+[node name="DaNhan" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Đã Nhận"
+flat = true
+alignment = 0
+
+[node name="Buffer2" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Filters" type="VBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 20.0
+theme_override_constants/separation = 4
+
+[node name="Buffer" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="NamHoc" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_t8843")
+placeholder_text = "VD: 2023-2024"
+
+[node name="MaHoKhau" type="HBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+
+[node name="MaHoKhauCuoiNamHoc" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaHoKhau"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_t8843")
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="ChonMaHoKhauCuoiNamHoc" type="OptionButton" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaHoKhau"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("6_eo24t")
+item_count = 1
+popup/item_0/text = ""
+popup/item_0/id = 0
+
+[node name="MaNhanKhau" type="HBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+
+[node name="MaNhanKhauCuoiNamHoc" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaNhanKhau"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_t8843")
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="ChonMaNhanKhauCuoiNamHoc" type="OptionButton" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaNhanKhau"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("6_eo24t")
+item_count = 1
+popup/item_0/text = ""
+popup/item_0/id = 0
+
+[node name="Lop" type="OptionButton" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+theme = ExtResource("6_eo24t")
+item_count = 1
+selected = 0
+popup/item_0/text = "Chọn lớp"
+popup/item_0/id = 0
+
+[node name="Truong" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+theme = ExtResource("7_t8843")
+
+[node name="DanhHieu" type="OptionButton" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+theme = ExtResource("6_eo24t")
+item_count = 4
+selected = 0
+popup/item_0/text = "Chọn danh hiệu"
+popup/item_0/id = 0
+popup/item_0/separator = true
+popup/item_1/text = "Học sinh giỏi và các thành tích đặc biệt"
+popup/item_1/id = 1
+popup/item_2/text = "Học sinh tiên tiến"
+popup/item_2/id = 2
+popup/item_3/text = "Còn lại"
+popup/item_3/id = 3
+
+[node name="DaNhan" type="CheckBox" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("8_0xxkt")
+button_pressed = true
+
+[node name="Buffer2" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TongSoTien" type="HBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Field" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/TongSoTien"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Tổng Số Tiền"
+flat = true
+alignment = 0
+
+[node name="TongSoTien" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/TongSoTien"]
+layout_mode = 2
+theme = ExtResource("7_t8843")
+placeholder_text = "0"
+editable = false
+
+[node name="VND" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/TongSoTien"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("5_0057c")
+disabled = true
+text = "VND"
+flat = true
+alignment = 0
+
+[node name="Buffer2" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
+
+[node name="BufferRight" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="PhanThuongDipDacBiet" type="HBoxContainer" parent="VBoxContainer/TruongThongKe"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BufferLeft" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="PanelContainer" type="VBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="Buffer" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="TruongThongTin" type="VBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 4
+
+[node name="Buffer" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="DipDacBiet" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Dịp Đặc Biệt "
+flat = true
+alignment = 0
+
+[node name="Nam" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Năm"
+flat = true
+alignment = 0
+
+[node name="MaHoKhau" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Hộ Khẩu"
+flat = true
+alignment = 0
+
+[node name="MaNhanKhau" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Nhân Khẩu"
+flat = true
+alignment = 0
+
+[node name="PhanThuong" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Phần Thưởng"
+flat = true
+alignment = 0
+
+[node name="DaNhan" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Đã Nhận"
+flat = true
+alignment = 0
+
+[node name="Buffer2" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Filters" type="VBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 20.0
+theme_override_constants/separation = 4
+
+[node name="Buffer" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="DipDacBiet" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_t8843")
+placeholder_text = "VD: Trung Thu"
+
+[node name="Nam" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_t8843")
+
+[node name="MaHoKhau" type="HBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+
+[node name="MaHoKhauDipDacBiet" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaHoKhau"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_t8843")
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="ChonMaHoKhauDipDacBiet" type="OptionButton" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaHoKhau"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("6_eo24t")
+item_count = 1
+popup/item_0/text = ""
+popup/item_0/id = 0
+
+[node name="MaNhanKhau" type="HBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+
+[node name="MaNhanKhauDipDacBiet" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaNhanKhau"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_t8843")
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="ChonMaNhanKhauDipDacBiet" type="OptionButton" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaNhanKhau"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("6_eo24t")
+item_count = 1
+popup/item_0/text = ""
+popup/item_0/id = 0
+
+[node name="PhanThuong" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_t8843")
+
+[node name="DaNhan" type="CheckBox" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("8_0xxkt")
+button_pressed = true
+
+[node name="Buffer2" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="TongSoTien" type="HBoxContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Field" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/TongSoTien"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("5_0057c")
+disabled = true
+text = "Tổng Số Tiền"
+flat = true
+alignment = 0
+
+[node name="TongSoTien" type="LineEdit" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/TongSoTien"]
+layout_mode = 2
+theme = ExtResource("7_t8843")
+placeholder_text = "0"
+editable = false
+
+[node name="VND" type="Button" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/TongSoTien"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("5_0057c")
+disabled = true
+text = "VND"
+flat = true
+alignment = 0
+
+[node name="Buffer2" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.02
+
+[node name="BufferRight" type="PanelContainer" parent="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BufferLeft2" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="ThongKeButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+focus_mode = 0
+theme = ExtResource("4_i1mwa")
+text = "Thống kê"
+icon = ExtResource("8_gs58u")
+alignment = 0
+expand_icon = true
+
+[node name="BufferLeft" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="BufferBottom" type="PanelContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="Table" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BufferTop" type="PanelContainer" parent="Table"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Table"]
+layout_mode = 2
+
+[node name="Buffer" type="PanelContainer" parent="Table/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="TableButtons" type="HBoxContainer" parent="Table/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Table/HBoxContainer2/TableButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+theme_override_constants/separation = 0
+
+[node name="LamMoiButton" type="Button" parent="Table/HBoxContainer2/TableButtons/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme = ExtResource("4_i1mwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j6jrv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_58cxe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4g7nv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_iqlhi")
+icon = ExtResource("9_2cgl5")
+
+[node name="PanelContainer" type="PanelContainer" parent="Table/HBoxContainer2/TableButtons/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wpfqe")
+
+[node name="MoTepButton" type="Button" parent="Table/HBoxContainer2/TableButtons/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+focus_mode = 0
+theme = ExtResource("4_i1mwa")
+text = "Mở tệp excel"
+icon = ExtResource("10_dibvu")
+alignment = 0
+expand_icon = true
+
+[node name="DuongDanTep" type="LineEdit" parent="Table/HBoxContainer2/TableButtons/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+focus_mode = 0
+theme = ExtResource("7_t8843")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j2ymx")
+placeholder_text = "   Chưa có tệp nào được chọn"
+structured_text_bidi_override = 2
+
+[node name="TaiVeButton" type="Button" parent="Table/HBoxContainer2/TableButtons/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+focus_mode = 0
+theme = ExtResource("4_i1mwa")
+text = "Tải về"
+icon = ExtResource("11_gq6mx")
+alignment = 0
+expand_icon = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Table/HBoxContainer2/TableButtons"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 19.0
+
+[node name="XoaButton" type="Button" parent="Table/HBoxContainer2/TableButtons/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+focus_mode = 0
+theme = ExtResource("4_i1mwa")
+text = "Xóa"
+icon = ExtResource("12_ji5ut")
+alignment = 0
+expand_icon = true
+
+[node name="XoaHetButton" type="Button" parent="Table/HBoxContainer2/TableButtons/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+focus_mode = 0
+theme = ExtResource("4_i1mwa")
+text = "Xóa Hết"
+icon = ExtResource("13_1f00e")
+alignment = 0
+expand_icon = true
+
+[node name="SubmenuTable" type="Button" parent="Table/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme = ExtResource("4_i1mwa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtmow")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jlod6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a1b2n")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_sagc3")
+icon = ExtResource("14_me6ob")
+icon_alignment = 1
+
+[node name="Buffer2" type="PanelContainer" parent="Table/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Table"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BufferLeft" type="PanelContainer" parent="Table/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="DanhSachNhanKhau" parent="Table/HBoxContainer" instance=ExtResource("15_jb7wk")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+theme = SubResource("Theme_q8p2t")
+
+[node name="BufferRight" type="PanelContainer" parent="Table/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="BufferBottom" type="PanelContainer" parent="Table"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ThanhCongCu/PhanThuongCuoiNamHoc" to="." method="_on_phan_thuong_cuoi_nam_hoc_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/ThanhCongCu/PhanThuongDipDacBiet" to="." method="_on_phan_thuong_dip_dac_biet_pressed"]
+[connection signal="tab_selected" from="VBoxContainer/TruongThongKe" to="." method="_on_truong_thong_ke_tab_selected"]
+[connection signal="text_changed" from="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaHoKhau/MaHoKhauCuoiNamHoc" to="." method="_on_ma_ho_khau_cuoi_nam_hoc_text_changed"]
+[connection signal="item_selected" from="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaHoKhau/ChonMaHoKhauCuoiNamHoc" to="." method="_on_chon_ma_ho_khau_cuoi_nam_hoc_item_selected"]
+[connection signal="text_changed" from="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaNhanKhau/MaNhanKhauCuoiNamHoc" to="." method="_on_ma_nhan_khau_cuoi_nam_hoc_text_changed"]
+[connection signal="item_selected" from="VBoxContainer/TruongThongKe/PhanThuongCuoiNamHoc/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaNhanKhau/ChonMaNhanKhauCuoiNamHoc" to="." method="_on_chon_ma_nhan_khau_cuoi_nam_hoc_item_selected"]
+[connection signal="text_changed" from="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaHoKhau/MaHoKhauDipDacBiet" to="." method="_on_ma_ho_khau_dip_dac_biet_text_changed"]
+[connection signal="item_selected" from="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaHoKhau/ChonMaHoKhauDipDacBiet" to="." method="_on_chon_ma_ho_khau_dip_dac_biet_item_selected"]
+[connection signal="text_changed" from="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaNhanKhau/MaNhanKhauDipDacBiet" to="." method="_on_ma_nhan_khau_dip_dac_biet_text_changed"]
+[connection signal="item_selected" from="VBoxContainer/TruongThongKe/PhanThuongDipDacBiet/PanelContainer/ScrollContainer/HBoxContainer/Filters/MaNhanKhau/ChonMaNhanKhauDipDacBiet" to="." method="_on_chon_ma_nhan_khau_dip_dac_biet_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ThongKeButton" to="." method="_on_thong_ke_button_pressed"]
+[connection signal="pressed" from="Table/HBoxContainer2/SubmenuTable" to="." method="_on_submenu_table_pressed"]

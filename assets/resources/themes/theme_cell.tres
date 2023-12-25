@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d36q1w4haw802"]
+
+[ext_resource type="FontFile" uid="uid://dl36jwef0d627" path="res://assets/resources/fonts/arial.ttf" id="1_isw44"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c3ag"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font = ExtResource("1_isw44")
+default_font_size = 24
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/styles/normal = SubResource("StyleBoxFlat_5c3ag")

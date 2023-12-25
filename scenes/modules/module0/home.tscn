@@ -1,0 +1,507 @@
+[gd_scene load_steps=31 format=3 uid="uid://cs5gnf04ysi43"]
+
+[ext_resource type="Texture2D" uid="uid://bhokghs8m3a6a" path="res://assets/sprites/ui/backgrounds/hust.png" id="1_73qr1"]
+[ext_resource type="Script" path="res://scenes/modules/module0/home.gd" id="1_f5ffj"]
+[ext_resource type="Theme" uid="uid://bmblqurfupkr5" path="res://assets/resources/themes/theme_tab.tres" id="2_5u5bj"]
+[ext_resource type="Texture2D" uid="uid://dgrhik6bqvhno" path="res://assets/sprites/ui/buttons/default_user.png" id="3_0swj5"]
+[ext_resource type="Texture2D" uid="uid://dp11us15t6h4v" path="res://assets/sprites/icons/hust_boot_splash.png" id="3_wxsga"]
+[ext_resource type="Texture2D" uid="uid://dx26g3vohw8oa" path="res://assets/sprites/ui/buttons/account_management.png" id="4_jyhum"]
+[ext_resource type="Texture2D" uid="uid://b5u7vpoi5dhj4" path="res://assets/sprites/ui/buttons/house.png" id="4_pnxrs"]
+[ext_resource type="FontFile" uid="uid://dm4u5rvan3e7u" path="res://assets/resources/fonts/arialbd.TTF" id="4_w7sfd"]
+[ext_resource type="Texture2D" uid="uid://dxs080loa4elp" path="res://assets/sprites/ui/buttons/bill.png" id="5_ai8jl"]
+[ext_resource type="Theme" uid="uid://buw518p00ufvd" path="res://assets/resources/themes/theme_menubutton.tres" id="6_c7e3f"]
+[ext_resource type="Texture2D" uid="uid://msm2by3ayuam" path="res://assets/sprites/ui/buttons/money.png" id="7_5tskt"]
+[ext_resource type="Texture2D" uid="uid://tx5uvc0k5o3y" path="res://assets/sprites/ui/buttons/home.png" id="7_qktj1"]
+[ext_resource type="Theme" uid="uid://b0f85lxjcftcx" path="res://assets/resources/themes/theme_popup.tres" id="8_jufog"]
+[ext_resource type="PackedScene" uid="uid://c78ph1l0oxvwj" path="res://scenes/modules/module1/quan_ly_ho_khau.tscn" id="8_y5k15"]
+[ext_resource type="FontFile" uid="uid://dl36jwef0d627" path="res://assets/resources/fonts/arial.ttf" id="9_w1h01"]
+[ext_resource type="PackedScene" uid="uid://bejuvkbdm02ya" path="res://scenes/modules/module0/sprints/ho_so_nguoi_dung.tscn" id="11_iusas"]
+[ext_resource type="PackedScene" uid="uid://8g1y0f6u4v1i" path="res://scenes/modules/module0/sprints/doi_mat_khau.tscn" id="12_3oby4"]
+[ext_resource type="PackedScene" uid="uid://cinuy171tewx3" path="res://scenes/modules/module0/quan_ly_tai_khoan.tscn" id="13_e1ivs"]
+[ext_resource type="PackedScene" uid="uid://c1p8flqoobh03" path="res://scenes/modules/module2/quan_ly_thu_chi.tscn" id="13_qwild"]
+[ext_resource type="PackedScene" uid="uid://jpsjs76lypw6" path="res://scenes/modules/module3/quan_ly_phan_thuong.tscn" id="14_3pdjw"]
+[ext_resource type="PackedScene" uid="uid://2fypgmy4mda1" path="res://scenes/modules/module0/trang_chu.tscn" id="15_ho7y5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fd0k"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1jlc"]
+
+[sub_resource type="Theme" id="Theme_bhcjy"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("4_w7sfd")
+Label/styles/normal = SubResource("StyleBoxEmpty_p1jlc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nmtx"]
+bg_color = Color(0, 0.282353, 0.996078, 0.705882)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.627451, 0.996078, 0.784314)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsxsa"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gb3p0"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.839216)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3d1v"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jriur"]
+bg_color = Color(0.756863, 0.756863, 0.756863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enssv"]
+bg_color = Color(0.729412, 0.729412, 0.729412, 1)
+
+[node name="Home" type="Node2D"]
+script = ExtResource("1_f5ffj")
+
+[node name="BG" type="Sprite2D" parent="."]
+scale = Vector2(0.677249, 0.676692)
+texture = ExtResource("1_73qr1")
+centered = false
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Buffer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TabContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Buffer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+theme_override_styles/panel = SubResource("StyleBoxFlat_8fd0k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="Buffer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/TabContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8fd0k")
+
+[node name="HustBootSplash" type="TextureRect" parent="HBoxContainer/VBoxContainer/TabContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.75
+texture = ExtResource("3_wxsga")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/TabContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="Buffer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/TabContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8fd0k")
+
+[node name="Button" type="Label" parent="HBoxContainer/VBoxContainer/TabContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+size_flags_vertical = 1
+theme = SubResource("Theme_bhcjy")
+text = "HỆ THỐNG QUẢN LÝ TỔ DÂN PHỐ - SE05"
+vertical_alignment = 2
+
+[node name="Button2" type="Label" parent="HBoxContainer/VBoxContainer/TabContainer/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 1
+theme = SubResource("Theme_bhcjy")
+text = "ĐẠI HỌC BÁCH KHOA HÀ NỘI - TRƯỜNG CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG"
+vertical_alignment = 2
+
+[node name="Buffer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8fd0k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="HinhDaiDien" type="TextureButton" parent="HBoxContainer/VBoxContainer/TabContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource("3_0swj5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="ThanhCongCu" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4nmtx")
+
+[node name="ThanhCongCu" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu"]
+layout_mode = 2
+
+[node name="Buffer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+
+[node name="ThanhCongCu" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Buffer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsxsa")
+
+[node name="Buffer3" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsxsa")
+
+[node name="TrangChu" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+focus_mode = 0
+theme = ExtResource("6_c7e3f")
+theme_override_font_sizes/font_size = 16
+toggle_mode = true
+text = "Trang Chủ"
+icon = ExtResource("7_qktj1")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="HoKhau" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+focus_mode = 0
+theme = ExtResource("6_c7e3f")
+theme_override_font_sizes/font_size = 16
+toggle_mode = true
+text = "Hộ Khẩu"
+icon = ExtResource("4_pnxrs")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="ThuChi" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+focus_mode = 0
+theme = ExtResource("6_c7e3f")
+theme_override_font_sizes/font_size = 16
+toggle_mode = true
+text = "Thu Chi"
+icon = ExtResource("5_ai8jl")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="PhanThuong" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+focus_mode = 0
+theme = ExtResource("6_c7e3f")
+theme_override_font_sizes/font_size = 16
+toggle_mode = true
+text = "Phần Thưởng"
+icon = ExtResource("7_5tskt")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="TaiKhoan" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+focus_mode = 0
+theme = ExtResource("6_c7e3f")
+theme_override_font_sizes/font_size = 16
+toggle_mode = true
+text = "Tài Khoản"
+icon = ExtResource("4_jyhum")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Buffer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsxsa")
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Buffer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+
+[node name="ChucNang" type="TabContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 25.95
+theme = ExtResource("2_5u5bj")
+tabs_visible = false
+
+[node name="TrangChu" parent="HBoxContainer/VBoxContainer/HBoxContainer/ChucNang" instance=ExtResource("15_ho7y5")]
+layout_mode = 2
+
+[node name="QuanLyHoKhau" parent="HBoxContainer/VBoxContainer/HBoxContainer/ChucNang" instance=ExtResource("8_y5k15")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="QuanLyThuChi" parent="HBoxContainer/VBoxContainer/HBoxContainer/ChucNang" instance=ExtResource("13_qwild")]
+visible = false
+layout_mode = 2
+
+[node name="QuanLyPhanThuong" parent="HBoxContainer/VBoxContainer/HBoxContainer/ChucNang" instance=ExtResource("14_3pdjw")]
+visible = false
+layout_mode = 2
+
+[node name="QuanLyTaiKhoan" parent="HBoxContainer/VBoxContainer/HBoxContainer/ChucNang" instance=ExtResource("13_e1ivs")]
+visible = false
+layout_mode = 2
+
+[node name="Popup" type="Node2D" parent="."]
+
+[node name="PopupMenu" type="PopupMenu" parent="Popup"]
+title = "Warning!"
+initial_position = 1
+size = Vector2i(320, 160)
+unresizable = false
+borderless = false
+theme = ExtResource("8_jufog")
+hide_on_item_selection = false
+item_count = 1
+item_0/text = "sdasdas"
+item_0/id = 0
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Popup"]
+title = "Xác nhận"
+initial_position = 1
+size = Vector2i(320, 160)
+popup_window = true
+theme = ExtResource("8_jufog")
+ok_button_text = "Có"
+cancel_button_text = "Không"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Popup"]
+title = "Thông báo"
+initial_position = 1
+size = Vector2i(320, 160)
+popup_window = true
+min_size = Vector2i(200, 70)
+theme = ExtResource("8_jufog")
+
+[node name="FileDialog" type="FileDialog" parent="Popup"]
+title = "Lưu tệp excel"
+initial_position = 1
+size = Vector2i(720, 480)
+theme = ExtResource("8_jufog")
+ok_button_text = "Lưu"
+cancel_button_text = "Hủy"
+access = 2
+filters = PackedStringArray(".xlsx; Excel files")
+
+[node name="Avatar" type="PanelContainer" parent="Popup"]
+visible = false
+offset_left = 995.0
+offset_top = 71.0
+offset_right = 1259.0
+offset_bottom = 255.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gb3p0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup/Avatar"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup/Avatar/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = -4
+
+[node name="HustBootSplash" type="TextureRect" parent="Popup/Avatar/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_0swj5")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup/Avatar/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = -4
+
+[node name="HoVaTen" type="Label" parent="Popup/Avatar/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_w1h01")
+text = " Họ Và Tên"
+vertical_alignment = 2
+
+[node name="TenDangNhap" type="Label" parent="Popup/Avatar/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_w1h01")
+text = " Tên Đăng Nhập"
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Popup/Avatar/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup/Avatar/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/separation = -4
+
+[node name="ThongTin" type="Button" parent="Popup/Avatar/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_w1h01")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r3d1v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jriur")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_enssv")
+text = "   Thông tin cá nhân"
+alignment = 0
+
+[node name="DoiMatKhau" type="Button" parent="Popup/Avatar/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_w1h01")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r3d1v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jriur")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_enssv")
+text = "   Đổi mật khẩu"
+alignment = 0
+
+[node name="DangXuat" type="Button" parent="Popup/Avatar/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_w1h01")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r3d1v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jriur")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_enssv")
+text = "   Đăng xuất"
+alignment = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="Popup/Avatar/VBoxContainer"]
+layout_mode = 2
+
+[node name="HoSoNguoiDung" parent="Popup" instance=ExtResource("11_iusas")]
+visible = false
+offset_left = 424.0
+offset_right = 848.0
+
+[node name="DoiMatKhau" parent="Popup" instance=ExtResource("12_3oby4")]
+visible = false
+offset_left = 448.0
+offset_right = 832.0
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/TabContainer/VBoxContainer/HinhDaiDien" to="." method="_on_hinh_dai_dien_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu/TrangChu" to="." method="_on_trang_chu_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu/HoKhau" to="." method="_on_ho_khau_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu/ThuChi" to="." method="_on_thu_chi_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu/PhanThuong" to="." method="_on_phan_thuong_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu/TaiKhoan" to="." method="_on_tai_khoan_pressed"]
+[connection signal="confirmed" from="Popup/ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
+[connection signal="pressed" from="Popup/Avatar/VBoxContainer/VBoxContainer/ThongTin" to="." method="_on_thong_tin_pressed"]
+[connection signal="pressed" from="Popup/Avatar/VBoxContainer/VBoxContainer/DoiMatKhau" to="." method="_on_doi_mat_khau_pressed"]
+[connection signal="pressed" from="Popup/Avatar/VBoxContainer/VBoxContainer/DangXuat" to="." method="_on_dang_xuat_pressed"]
+[connection signal="closed" from="Popup/HoSoNguoiDung" to="." method="_on_ho_so_nguoi_dung_closed"]
+[connection signal="closed" from="Popup/DoiMatKhau" to="." method="_on_doi_mat_khau_closed"]

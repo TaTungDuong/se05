@@ -1,0 +1,1219 @@
+[gd_scene load_steps=31 format=3 uid="uid://cheveqt1l8423"]
+
+[ext_resource type="Texture2D" uid="uid://cu3wmppuq54me" path="res://assets/sprites/ui/bg_white.png" id="1_1t8po"]
+[ext_resource type="Script" path="res://scenes/modules/module1/sprints/tam_vang.gd" id="1_pd8q5"]
+[ext_resource type="Theme" uid="uid://b0f85lxjcftcx" path="res://assets/resources/themes/theme_popup.tres" id="2_rm63u"]
+[ext_resource type="Theme" uid="uid://brdiy7ttotod7" path="res://assets/resources/themes/theme_button.tres" id="3_iigtj"]
+[ext_resource type="Texture2D" uid="uid://i311ycl1lowb" path="res://assets/sprites/ui/buttons/edit.png" id="4_2uq36"]
+[ext_resource type="Texture2D" uid="uid://7njktnl60vll" path="res://assets/sprites/ui/buttons/save.png" id="5_io3t4"]
+[ext_resource type="Theme" uid="uid://cvxiiwjwnm8g" path="res://assets/resources/themes/theme_field.tres" id="6_arn35"]
+[ext_resource type="Theme" uid="uid://cpltx4lyxm334" path="res://assets/resources/themes/theme_textinput.tres" id="7_c28nm"]
+[ext_resource type="Texture2D" uid="uid://deeoxduo6dv61" path="res://assets/forms/don-xin-tam-vang.png" id="8_15dbi"]
+[ext_resource type="Texture2D" uid="uid://c6mgn5a4hwcu2" path="res://assets/sprites/ui/buttons/insert.png" id="8_gjyhc"]
+[ext_resource type="Texture2D" uid="uid://dib2b4ivnvl4u" path="res://assets/sprites/ui/buttons/reload_white.png" id="9_uexop"]
+[ext_resource type="Texture2D" uid="uid://ugcbgupx7cya" path="res://assets/sprites/ui/buttons/open.png" id="10_0k433"]
+[ext_resource type="Theme" uid="uid://6qdjft62ndn3" path="res://assets/resources/themes/theme_option.tres" id="10_7bqs0"]
+[ext_resource type="Texture2D" uid="uid://ctqy0hrjjmicj" path="res://assets/sprites/ui/buttons/import.png" id="11_xhat3"]
+[ext_resource type="Texture2D" uid="uid://c5n8m08ivk1gs" path="res://assets/sprites/ui/buttons/delete.png" id="12_wmn43"]
+[ext_resource type="Texture2D" uid="uid://bklhwn6i50nru" path="res://assets/sprites/ui/buttons/delete_all.png" id="13_tayol"]
+[ext_resource type="PackedScene" uid="uid://4tpwkqip551a" path="res://scenes/global_elements/elements/table.tscn" id="15_nx0ij"]
+[ext_resource type="Texture2D" uid="uid://rvipcqnl28du" path="res://assets/sprites/ui/buttons/submenu_normal.png" id="17_kxokq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpngu"]
+bg_color = Color(0, 0.466667, 0.74902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctdev"]
+bg_color = Color(0, 0.380392, 0.611765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vg46b"]
+bg_color = Color(0, 0.294118, 0.482353, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23qm5"]
+bg_color = Color(0, 0.304688, 0.5, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frwep"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfgry"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpkhg"]
+bg_color = Color(0, 0.466667, 0.74902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhs4w"]
+bg_color = Color(0, 0.380392, 0.611765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7wit"]
+bg_color = Color(0, 0.294118, 0.482353, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cb7rh"]
+bg_color = Color(0, 0.304688, 0.5, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7e070"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_ue21c"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_7e070")
+
+[node name="TamVang" type="VBoxContainer"]
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_pd8q5")
+
+[node name="BgWhite" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(5, 2.78125)
+texture = ExtResource("1_1t8po")
+centered = false
+
+[node name="Popup" type="Node2D" parent="."]
+
+[node name="PopupMenu" type="PopupMenu" parent="Popup"]
+title = "Warning!"
+initial_position = 1
+size = Vector2i(320, 160)
+unresizable = false
+borderless = false
+always_on_top = true
+theme = ExtResource("2_rm63u")
+hide_on_item_selection = false
+item_count = 1
+item_0/text = "sdasdas"
+item_0/id = 0
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Popup"]
+title = "Xác nhận"
+initial_position = 1
+size = Vector2i(320, 160)
+always_on_top = true
+popup_window = true
+theme = ExtResource("2_rm63u")
+ok_button_text = "Có"
+cancel_button_text = "Không"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Popup"]
+title = "Thông báo"
+initial_position = 1
+size = Vector2i(320, 160)
+always_on_top = true
+popup_window = true
+min_size = Vector2i(200, 70)
+theme = ExtResource("2_rm63u")
+
+[node name="FileDialog" type="FileDialog" parent="Popup"]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(720, 480)
+theme = ExtResource("2_rm63u")
+ok_button_text = "Open"
+cancel_button_text = "Hủy"
+file_mode = 0
+access = 2
+filters = PackedStringArray(".xlsx; Excel Files")
+
+[node name="DocFileDialog" type="FileDialog" parent="Popup"]
+initial_position = 1
+size = Vector2i(720, 480)
+theme = ExtResource("2_rm63u")
+ok_button_text = "Lưu"
+cancel_button_text = "Hủy"
+access = 2
+filters = PackedStringArray(".doc; Word Files")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BufferTop" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BufferLeft" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="SuaButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+visible = false
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("3_iigtj")
+disabled = true
+toggle_mode = true
+text = "Sửa thông tin"
+icon = ExtResource("4_2uq36")
+alignment = 0
+expand_icon = true
+
+[node name="LuuButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_iigtj")
+text = "Lưu đơn"
+icon = ExtResource("5_io3t4")
+alignment = 0
+expand_icon = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.15
+
+[node name="DonXinTamVang" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("8_15dbi")
+
+[node name="DienThongTin" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="ThiTran" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ThiTranTamVang" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin/ThiTran"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 160.0
+offset_right = 703.0
+offset_bottom = 187.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+expand_to_text_length = true
+flat = true
+
+[node name="ThiTranTamTru" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin/ThiTran"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 180.0
+offset_right = 703.0
+offset_bottom = 207.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+expand_to_text_length = true
+flat = true
+
+[node name="ThiTranTamVang2" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin/ThiTran"]
+layout_mode = 0
+offset_left = 563.0
+offset_top = 268.0
+offset_right = 864.0
+offset_bottom = 295.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+expand_to_text_length = true
+flat = true
+
+[node name="ThiTranTamTru2" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin/ThiTran"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 331.0
+offset_right = 720.0
+offset_bottom = 358.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+expand_to_text_length = true
+flat = true
+
+[node name="HoVaTen" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 203.0
+offset_right = 468.0
+offset_bottom = 230.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+flat = true
+
+[node name="NgaySinh" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 225.0
+offset_right = 474.0
+offset_bottom = 252.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+flat = true
+
+[node name="CMND" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 245.0
+offset_right = 474.0
+offset_bottom = 272.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+flat = true
+
+[node name="DiaChiTamVang" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 289.0
+offset_right = 551.0
+offset_bottom = 316.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+expand_to_text_length = true
+flat = true
+
+[node name="DiaChiTamTru" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin"]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 353.0
+offset_right = 527.0
+offset_bottom = 380.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+expand_to_text_length = true
+flat = true
+
+[node name="ThoiDiemDi" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin"]
+anchors_preset = 0
+
+[node name="NgayDi" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin/ThoiDiemDi"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 395.0
+offset_right = 456.0
+offset_bottom = 422.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+flat = true
+
+[node name="ThangDi" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin/ThoiDiemDi"]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 395.0
+offset_right = 564.0
+offset_bottom = 422.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+flat = true
+
+[node name="NamDi" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin/ThoiDiemDi"]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 395.0
+offset_right = 656.0
+offset_bottom = 422.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+flat = true
+
+[node name="ThoiDiemVe" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NgayVe" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin/ThoiDiemVe"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 418.0
+offset_right = 470.0
+offset_bottom = 445.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+flat = true
+
+[node name="ThangVe" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin/ThoiDiemVe"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 418.0
+offset_right = 579.0
+offset_bottom = 445.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+flat = true
+
+[node name="NamVe" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin/ThoiDiemVe"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 418.0
+offset_right = 669.0
+offset_bottom = 445.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+editable = false
+flat = true
+
+[node name="LyDo" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DienThongTin"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 442.0
+offset_right = 681.0
+offset_bottom = 598.0
+theme_override_colors/font_color = Color(0.015625, 0.015625, 0.015625, 1)
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+language = "vi"
+
+[node name="DauCham" type="Control" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="LyDoTrong" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 447.0
+offset_right = 681.0
+offset_bottom = 603.0
+theme_override_colors/font_color = Color(0.015625, 0.015625, 0.015625, 1)
+theme_override_font_sizes/font_size = 16
+text = "............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................"
+autowrap_mode = 3
+language = "vi"
+
+[node name="NgayVe2" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 421.0
+offset_right = 469.0
+offset_bottom = 448.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........."
+editable = false
+flat = true
+
+[node name="ThangVe2" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 421.0
+offset_right = 577.0
+offset_bottom = 448.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........."
+editable = false
+flat = true
+
+[node name="NamVe2" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 421.0
+offset_right = 669.0
+offset_bottom = 448.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........."
+editable = false
+flat = true
+
+[node name="NgayDi2" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 398.0
+offset_right = 455.0
+offset_bottom = 425.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........."
+editable = false
+flat = true
+
+[node name="ThangDi2" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 398.0
+offset_right = 563.0
+offset_bottom = 425.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........."
+editable = false
+flat = true
+
+[node name="NamDi2" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 399.0
+offset_right = 654.0
+offset_bottom = 426.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........."
+editable = false
+flat = true
+
+[node name="DiaChiTamTruTrong" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 356.0
+offset_right = 524.0
+offset_bottom = 383.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........................"
+editable = false
+flat = true
+
+[node name="DiaChiTamVangTrong" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 292.0
+offset_right = 548.0
+offset_bottom = 319.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........................"
+editable = false
+flat = true
+
+[node name="CMNDTrong" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 249.0
+offset_right = 472.0
+offset_bottom = 276.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........................"
+editable = false
+flat = true
+
+[node name="NgaySinhTrong" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 228.0
+offset_right = 472.0
+offset_bottom = 255.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........................"
+editable = false
+flat = true
+
+[node name="ThiTranTamVang3" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 163.0
+offset_right = 701.0
+offset_bottom = 190.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........................"
+editable = false
+flat = true
+
+[node name="ThiTranTamTru3" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 183.0
+offset_right = 702.0
+offset_bottom = 210.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........................"
+editable = false
+flat = true
+
+[node name="ThiTranTamVang4" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 561.0
+offset_top = 271.0
+offset_right = 661.0
+offset_bottom = 298.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........................"
+editable = false
+flat = true
+
+[node name="ThiTranTamTru4" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 334.0
+offset_right = 716.0
+offset_bottom = 361.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........................"
+editable = false
+flat = true
+
+[node name="HoVaTenTrong" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ScrollContainer/DonXinTamVang/DauCham"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 206.0
+offset_right = 465.0
+offset_bottom = 233.0
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+placeholder_text = "........................"
+editable = false
+flat = true
+
+[node name="BufferBottom" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="PanelContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/PanelContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="ThemButton" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("3_iigtj")
+text = "Thêm thông tin"
+icon = ExtResource("8_gjyhc")
+alignment = 0
+expand_icon = true
+
+[node name="SuaButton" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/HBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("3_iigtj")
+text = "Sửa thông tin"
+icon = ExtResource("4_2uq36")
+alignment = 0
+expand_icon = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="TruongThongTin" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Buffer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="MaNhanKhau" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_arn35")
+disabled = true
+text = "Mã Nhân Khẩu*"
+flat = true
+alignment = 0
+
+[node name="SoNhaTamTru" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_arn35")
+disabled = true
+text = "Số Nhà Tạm Trú"
+flat = true
+alignment = 0
+
+[node name="DuongPhoTamTru" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_arn35")
+disabled = true
+text = "Đường Phố Tạm Trú"
+flat = true
+alignment = 0
+
+[node name="ThiTranTamTru" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_arn35")
+disabled = true
+text = "Thị Trấn Tạm Trú*"
+flat = true
+alignment = 0
+
+[node name="QuanHuyenTamTru" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_arn35")
+disabled = true
+text = "Quận Huyện Tạm Trú*"
+flat = true
+alignment = 0
+
+[node name="TinhThanhTamTru" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_arn35")
+disabled = true
+text = "Tỉnh Thành Tạm Trú*"
+flat = true
+alignment = 0
+
+[node name="ThoiDiemDi" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_arn35")
+disabled = true
+text = "Thời Điểm Đi*"
+flat = true
+alignment = 0
+
+[node name="ThoiDiemVe" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_arn35")
+disabled = true
+text = "Thời Điểm Về*"
+flat = true
+alignment = 0
+
+[node name="LyDo" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_arn35")
+disabled = true
+text = "Lý Do*"
+flat = true
+alignment = 0
+
+[node name="GhiChu" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_arn35")
+disabled = true
+text = "Ghi Chú"
+flat = true
+alignment = 0
+
+[node name="Buffer2" type="PanelContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="DienThongTinTamVang" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 20.0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Buffer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="MaNhanKhau" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+
+[node name="MaNhanKhau" type="LineEdit" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/MaNhanKhau"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_c28nm")
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="ChonMaNhanKhau" type="OptionButton" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/MaNhanKhau"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("10_7bqs0")
+item_count = 1
+popup/item_0/text = ""
+popup/item_0/id = 0
+
+[node name="SoNhaTamTru" type="LineEdit" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+theme = ExtResource("7_c28nm")
+caret_blink = true
+
+[node name="DuongPhoTamTru" type="LineEdit" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+theme = ExtResource("7_c28nm")
+caret_blink = true
+
+[node name="ThiTranTamTru" type="LineEdit" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+theme = ExtResource("7_c28nm")
+caret_blink = true
+
+[node name="QuanHuyenTamTru" type="LineEdit" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+theme = ExtResource("7_c28nm")
+caret_blink = true
+
+[node name="TinhThanhTamTru" type="LineEdit" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+theme = ExtResource("7_c28nm")
+caret_blink = true
+
+[node name="ThoiDiemDi" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+focus_mode = 2
+
+[node name="NamDi" type="OptionButton" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemDi"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_7bqs0")
+item_count = 1
+selected = 0
+popup/item_0/text = "Năm"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+
+[node name="ThangDi" type="OptionButton" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemDi"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_7bqs0")
+item_count = 1
+selected = 0
+popup/item_0/text = "Tháng"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+
+[node name="NgayDi" type="OptionButton" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemDi"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_7bqs0")
+item_count = 1
+selected = 0
+popup/item_0/text = "Ngày"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+
+[node name="ThoiDiemVe" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+focus_mode = 2
+
+[node name="NamVe" type="OptionButton" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemVe"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_7bqs0")
+item_count = 1
+selected = 0
+popup/item_0/text = "Năm"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+
+[node name="ThangVe" type="OptionButton" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemVe"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_7bqs0")
+item_count = 1
+selected = 0
+popup/item_0/text = "Tháng"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+
+[node name="NgayVe" type="OptionButton" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemVe"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_7bqs0")
+item_count = 1
+selected = 0
+popup/item_0/text = "Ngày"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_0/separator = true
+
+[node name="LyDo" type="LineEdit" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+theme = ExtResource("7_c28nm")
+caret_blink = true
+
+[node name="GhiChu" type="LineEdit" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+theme = ExtResource("7_c28nm")
+caret_blink = true
+
+[node name="Buffer2" type="PanelContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Table" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BufferTop" type="PanelContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/Table"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/Table"]
+layout_mode = 2
+
+[node name="TableButtons" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+theme_override_constants/separation = -1
+
+[node name="LamMoiButton" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme = ExtResource("3_iigtj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xpngu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ctdev")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vg46b")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_23qm5")
+icon = ExtResource("9_uexop")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.01
+theme_override_styles/panel = SubResource("StyleBoxFlat_frwep")
+
+[node name="MoTepButton" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+focus_mode = 0
+theme = ExtResource("3_iigtj")
+text = "Mở tệp excel"
+icon = ExtResource("10_0k433")
+alignment = 0
+expand_icon = true
+
+[node name="DuongDanTep" type="LineEdit" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+focus_mode = 0
+theme = ExtResource("7_c28nm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mfgry")
+placeholder_text = "   Chưa có tệp nào được chọn"
+language = "vi_VN"
+structured_text_bidi_override = 2
+
+[node name="TaiLenButton" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+theme = ExtResource("3_iigtj")
+text = "Tải lên"
+icon = ExtResource("11_xhat3")
+alignment = 0
+expand_icon = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="XoaButton" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+focus_mode = 0
+theme = ExtResource("3_iigtj")
+text = "Xóa"
+icon = ExtResource("12_wmn43")
+alignment = 0
+expand_icon = true
+
+[node name="XoaHetButton" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+focus_mode = 0
+theme = ExtResource("3_iigtj")
+text = "Xóa Hết"
+icon = ExtResource("13_tayol")
+alignment = 0
+expand_icon = true
+
+[node name="SubmenuTable" type="Button" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+theme = ExtResource("3_iigtj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mpkhg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xhs4w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l7wit")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_cb7rh")
+icon = ExtResource("17_kxokq")
+icon_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/Table"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DanhSachNguoiDung" parent="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer" instance=ExtResource("15_nx0ij")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+theme = SubResource("Theme_ue21c")
+
+[node name="BufferBottom" type="PanelContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/Table"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[node name="BufferRight" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="BufferBottom" type="PanelContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[connection signal="confirmed" from="Popup/ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
+[connection signal="file_selected" from="Popup/FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="file_selected" from="Popup/DocFileDialog" to="." method="_on_doc_file_dialog_file_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer/LuuButton" to="." method="_on_luu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/HBoxContainer/ThemButton" to="." method="_on_them_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/HBoxContainer/SuaButton" to="." method="_on_sua_button_pressed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/MaNhanKhau/MaNhanKhau" to="." method="_on_ma_nhan_khau_text_changed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/MaNhanKhau/ChonMaNhanKhau" to="." method="_on_chon_ma_nhan_khau_item_selected"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/SoNhaTamTru" to="." method="_on_so_nha_tam_tru_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/DuongPhoTamTru" to="." method="_on_duong_pho_tam_tru_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThiTranTamTru" to="." method="_on_thi_tran_tam_tru_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/QuanHuyenTamTru" to="." method="_on_quan_huyen_tam_tru_text_changed"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/TinhThanhTamTru" to="." method="_on_tinh_thanh_tam_tru_text_changed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemDi/NamDi" to="." method="_on_nam_di_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemDi/ThangDi" to="." method="_on_thang_di_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemDi/NgayDi" to="." method="_on_ngay_di_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemVe/NamVe" to="." method="_on_nam_ve_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemVe/ThangVe" to="." method="_on_thang_ve_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/ThoiDiemVe/NgayVe" to="." method="_on_ngay_ve_item_selected"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/HBoxContainer/DienThongTinTamVang/LyDo" to="." method="_on_ly_do_text_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer2/LamMoiButton" to="." method="_on_lam_moi_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer2/MoTepButton" to="." method="_on_mo_tep_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer2/TaiLenButton" to="." method="_on_tai_len_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer/XoaButton" to="." method="_on_xoa_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/TableButtons/HBoxContainer/XoaHetButton" to="." method="_on_xoa_het_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PanelContainer/Table/HBoxContainer2/SubmenuTable" to="." method="_on_submenu_table_pressed"]

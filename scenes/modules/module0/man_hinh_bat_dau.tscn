@@ -1,0 +1,329 @@
+[gd_scene load_steps=14 format=3 uid="uid://bocxubkkij7c6"]
+
+[ext_resource type="Script" path="res://scenes/modules/module0/man_hinh_bat_dau.gd" id="1_vnruc"]
+[ext_resource type="Theme" uid="uid://bmblqurfupkr5" path="res://assets/resources/themes/theme_tab.tres" id="1_vsgxk"]
+[ext_resource type="Texture2D" uid="uid://bhokghs8m3a6a" path="res://assets/sprites/ui/backgrounds/hust.png" id="2_j8kag"]
+[ext_resource type="PackedScene" uid="uid://c4vbmtt2m3ahn" path="res://scenes/modules/module0/sprints/dang_nhap.tscn" id="2_jtyps"]
+[ext_resource type="FontFile" uid="uid://vjt54d77shdb" path="res://assets/resources/fonts/arialblk.TTF" id="5_omutg"]
+[ext_resource type="PackedScene" uid="uid://bq5ux2ebeaooc" path="res://scenes/modules/module0/sprints/dang_ky.tscn" id="5_tf13q"]
+[ext_resource type="FontFile" uid="uid://dm4u5rvan3e7u" path="res://assets/resources/fonts/arialbd.TTF" id="6_mai68"]
+
+[sub_resource type="Theme" id="Theme_o2ayh"]
+default_font = ExtResource("5_omutg")
+default_font_size = 64
+
+[sub_resource type="Theme" id="Theme_mfv1t"]
+default_font = ExtResource("6_mai68")
+default_font_size = 48
+
+[sub_resource type="Animation" id="Animation_rlgd7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChucNang:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TenDuAn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -120)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TenDuAn:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ChucNang:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TenDuAn:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ChucNang:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(352, 180)]
+}
+
+[sub_resource type="Animation" id="Animation_xmytl"]
+resource_name = "trans_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChucNang:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TenDuAn:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TenDuAn:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -120), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TenDuAn:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ChucNang:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ChucNang:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(352, 360), Vector2(352, 180)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ChucNang/DangNhap")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"set_form"
+}, {
+"args": [true],
+"method": &"set_form"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qv8xf"]
+resource_name = "trans_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChucNang:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TenDuAn:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TenDuAn:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -120)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TenDuAn:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ChucNang:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ChucNang:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(352, 180), Vector2(352, 360)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mxpbe"]
+_data = {
+"RESET": SubResource("Animation_rlgd7"),
+"trans_in": SubResource("Animation_xmytl"),
+"trans_out": SubResource("Animation_qv8xf")
+}
+
+[node name="ManHinhBatDau" type="Node2D"]
+script = ExtResource("1_vnruc")
+
+[node name="Hust" type="Sprite2D" parent="."]
+scale = Vector2(0.677249, 0.676692)
+texture = ExtResource("2_j8kag")
+centered = false
+
+[node name="ChucNang" type="TabContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 352.0
+offset_top = 180.0
+offset_right = 928.0
+offset_bottom = 606.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_vsgxk")
+tab_alignment = 1
+tabs_visible = false
+
+[node name="DangNhap" parent="ChucNang" instance=ExtResource("2_jtyps")]
+layout_mode = 2
+
+[node name="DangKy" parent="ChucNang" instance=ExtResource("5_tf13q")]
+visible = false
+layout_mode = 2
+
+[node name="TenDuAn" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -120)
+
+[node name="SE05" type="Label" parent="TenDuAn"]
+offset_top = -64.0
+offset_right = 1280.0
+offset_bottom = 192.0
+theme = SubResource("Theme_o2ayh")
+text = "SE05"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ProjectName" type="Label" parent="TenDuAn"]
+offset_top = 80.0
+offset_right = 1280.0
+offset_bottom = 192.0
+theme = SubResource("Theme_mfv1t")
+text = "Quản lý tổ dân phố"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Transition" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_mxpbe")
+}
+
+[connection signal="signin_finished" from="ChucNang/DangNhap" to="." method="_on_dang_nhap_signin_finished"]
+[connection signal="signup_pressed" from="ChucNang/DangNhap" to="." method="_on_dang_nhap_signup_pressed"]
+[connection signal="signin_pressed" from="ChucNang/DangKy" to="." method="_on_dang_ky_signin_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

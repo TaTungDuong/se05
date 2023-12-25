@@ -1,0 +1,405 @@
+[gd_scene load_steps=20 format=3 uid="uid://bg8mddrqlfo2v"]
+
+[ext_resource type="Texture2D" uid="uid://bhokghs8m3a6a" path="res://assets/sprites/ui/backgrounds/hust.png" id="1_6xl6l"]
+[ext_resource type="Script" path="res://scenes/modules/module0/sprints/loading.gd" id="1_7cffm"]
+[ext_resource type="Texture2D" uid="uid://4bmeg5yia3lq" path="res://assets/sprites/ui/progress_bar/circle_progress.png" id="3_1p5oh"]
+[ext_resource type="FontFile" uid="uid://yd8pd4l0u6q4" path="res://assets/resources/fonts/earthrealm_ouline.ttf" id="4_ii412"]
+[ext_resource type="FontFile" uid="uid://dikxg4n8rb6cu" path="res://assets/resources/fonts/earthrealm.ttf" id="5_4gqml"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gtnlt"]
+light_mode = 1
+
+[sub_resource type="Theme" id="Theme_j0lmm"]
+default_font = ExtResource("4_ii412")
+default_font_size = 80
+
+[sub_resource type="Theme" id="Theme_v0djg"]
+default_font = ExtResource("4_ii412")
+default_font_size = 80
+
+[sub_resource type="Theme" id="Theme_3wrac"]
+default_font = ExtResource("4_ii412")
+default_font_size = 80
+
+[sub_resource type="Theme" id="Theme_yk0ev"]
+default_font = ExtResource("4_ii412")
+default_font_size = 80
+
+[sub_resource type="Animation" id="Animation_rhmey"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hust/H:theme:default_font")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ii412")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hust/U:theme:default_font")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ii412")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hust/S:theme:default_font")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ii412")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hust/T:theme:default_font")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ii412")]
+}
+
+[sub_resource type="Animation" id="Animation_5rcty"]
+resource_name = "hust"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hust/H:theme:default_font")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_4gqml"), ExtResource("4_ii412")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hust/U:theme:default_font")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_ii412"), ExtResource("5_4gqml"), ExtResource("4_ii412")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hust/S:theme:default_font")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_ii412"), ExtResource("5_4gqml"), ExtResource("4_ii412")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hust/T:theme:default_font")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_ii412"), ExtResource("5_4gqml")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ypbv7"]
+_data = {
+"RESET": SubResource("Animation_rhmey"),
+"hust": SubResource("Animation_5rcty")
+}
+
+[sub_resource type="Animation" id="Animation_m3vpw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ProgressBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ProgressBar:tint_progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.996078, 0.352941, 0.352941, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hust:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0vd1t"]
+resource_name = "progress"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ProgressBar:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HustLoop")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"pause"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ProgressBar:tint_progress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.996078, 0.352941, 0.352941, 1), Color(0.996078, 0.352941, 0.352941, 1), Color(0.996078, 0.352941, 0.352941, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hust:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_scene"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n01j4"]
+_data = {
+"RESET": SubResource("Animation_m3vpw"),
+"progress": SubResource("Animation_0vd1t")
+}
+
+[sub_resource type="Animation" id="Animation_3pdhh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hust:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4a1qv"]
+resource_name = "loading"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hust:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HustLoop")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["hust", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Progress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["progress", -1, 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4004"]
+_data = {
+"RESET": SubResource("Animation_3pdhh"),
+"loading": SubResource("Animation_4a1qv")
+}
+
+[node name="Loading" type="Node2D"]
+script = ExtResource("1_7cffm")
+
+[node name="BG" type="Sprite2D" parent="."]
+scale = Vector2(0.677249, 0.676692)
+texture = ExtResource("1_6xl6l")
+centered = false
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+texture_filter = 2
+material = SubResource("CanvasItemMaterial_gtnlt")
+offset_left = 400.0
+offset_top = 96.0
+offset_right = 880.0
+offset_bottom = 576.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+fill_mode = 4
+nine_patch_stretch = true
+texture_progress = ExtResource("3_1p5oh")
+tint_progress = Color(0.996078, 0.352941, 0.352941, 1)
+
+[node name="Hust" type="Node2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+metadata/_edit_group_ = true
+
+[node name="H" type="Label" parent="Hust"]
+offset_left = 512.0
+offset_top = 272.0
+offset_right = 576.0
+offset_bottom = 400.0
+theme = SubResource("Theme_j0lmm")
+text = "h"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="U" type="Label" parent="Hust"]
+offset_left = 576.0
+offset_top = 272.0
+offset_right = 640.0
+offset_bottom = 400.0
+theme = SubResource("Theme_v0djg")
+text = "u"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="S" type="Label" parent="Hust"]
+offset_left = 640.0
+offset_top = 272.0
+offset_right = 704.0
+offset_bottom = 400.0
+theme = SubResource("Theme_3wrac")
+text = "s"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="T" type="Label" parent="Hust"]
+offset_left = 704.0
+offset_top = 272.0
+offset_right = 768.0
+offset_bottom = 400.0
+theme = SubResource("Theme_yk0ev")
+text = "t"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HustLoop" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+speed_scale = 2.5
+libraries = {
+"": SubResource("AnimationLibrary_ypbv7")
+}
+
+[node name="Progress" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_n01j4")
+}
+
+[node name="Loading" type="AnimationPlayer" parent="."]
+autoplay = "loading"
+speed_scale = 0.91
+libraries = {
+"": SubResource("AnimationLibrary_a4004")
+}

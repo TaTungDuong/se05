@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://jpsjs76lypw6"]
+
+[ext_resource type="Script" path="res://scenes/modules/module3/quan_ly_phan_thuong.gd" id="1_wsydv"]
+[ext_resource type="Theme" uid="uid://buw518p00ufvd" path="res://assets/resources/themes/theme_menubutton.tres" id="2_t4lfd"]
+[ext_resource type="Theme" uid="uid://bmblqurfupkr5" path="res://assets/resources/themes/theme_tab.tres" id="3_rspvp"]
+[ext_resource type="PackedScene" uid="uid://ruh0hyuar2g7" path="res://scenes/modules/module3/sprints/phan_thuong_cuoi_nam_hoc.tscn" id="4_u3hbg"]
+[ext_resource type="PackedScene" uid="uid://dehoj4hnutqu6" path="res://scenes/modules/module3/sprints/phan_thuong_dip_dac_biet.tscn" id="5_tuiyn"]
+[ext_resource type="PackedScene" uid="uid://bct0e8upwyp5a" path="res://scenes/modules/module3/sprints/lich_su.tscn" id="6_4hl15"]
+[ext_resource type="PackedScene" uid="uid://cae2r7j6vxgc7" path="res://scenes/modules/module3/sprints/thong_ke.tscn" id="6_12ng2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_up3vj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_size = 4
+
+[node name="QuanLyPhanThuong" type="PanelContainer"]
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_up3vj")
+script = ExtResource("1_wsydv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ThanhCongCu" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PhanThuongCuoiNamHoc" type="Button" parent="VBoxContainer/ThanhCongCu"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("2_t4lfd")
+toggle_mode = true
+button_pressed = true
+text = "Phần Thưởng Cuối Năm Học"
+
+[node name="PhanThuongDipDacBiet" type="Button" parent="VBoxContainer/ThanhCongCu"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("2_t4lfd")
+toggle_mode = true
+text = "Phần Thưởng Dịp Đặc Biệt"
+
+[node name="LichSu" type="Button" parent="VBoxContainer/ThanhCongCu"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("2_t4lfd")
+toggle_mode = true
+text = "Lịch Sử"
+
+[node name="ThongKe" type="Button" parent="VBoxContainer/ThanhCongCu"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("2_t4lfd")
+toggle_mode = true
+text = "Thống Kê"
+
+[node name="ChucNang" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_rspvp")
+tabs_visible = false
+
+[node name="PhanThuongCuoiNamHoc" parent="VBoxContainer/ChucNang" instance=ExtResource("4_u3hbg")]
+layout_mode = 2
+
+[node name="PhanThuongDipDacBiet" parent="VBoxContainer/ChucNang" instance=ExtResource("5_tuiyn")]
+visible = false
+layout_mode = 2
+
+[node name="LichSu" parent="VBoxContainer/ChucNang" instance=ExtResource("6_4hl15")]
+visible = false
+layout_mode = 2
+
+[node name="ThongKe" parent="VBoxContainer/ChucNang" instance=ExtResource("6_12ng2")]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/ThanhCongCu/PhanThuongCuoiNamHoc" to="." method="_on_phan_thuong_cuoi_nam_hoc_pressed"]
+[connection signal="pressed" from="VBoxContainer/ThanhCongCu/PhanThuongDipDacBiet" to="." method="_on_phan_thuong_dip_dac_biet_pressed"]
+[connection signal="pressed" from="VBoxContainer/ThanhCongCu/LichSu" to="." method="_on_lich_su_pressed"]
+[connection signal="pressed" from="VBoxContainer/ThanhCongCu/ThongKe" to="." method="_on_thong_ke_pressed"]
+[connection signal="tab_selected" from="VBoxContainer/ChucNang" to="." method="_on_chuc_nang_tab_selected"]

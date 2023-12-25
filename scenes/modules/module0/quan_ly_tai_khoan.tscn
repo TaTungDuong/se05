@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://cinuy171tewx3"]
+
+[ext_resource type="PackedScene" uid="uid://bb52eponcin43" path="res://scenes/modules/module0/sprints/danh_sach_nguoi_dung.tscn" id="1_20k20"]
+[ext_resource type="Script" path="res://scenes/modules/module0/quan_ly_tai_khoan.gd" id="1_quovl"]
+[ext_resource type="Theme" uid="uid://buw518p00ufvd" path="res://assets/resources/themes/theme_menubutton.tres" id="1_qw4ve"]
+[ext_resource type="PackedScene" uid="uid://0bvrmcvjop6w" path="res://scenes/modules/module0/sprints/thong_tin_ca_nhan.tscn" id="3_idoc8"]
+[ext_resource type="PackedScene" uid="uid://b63vh5hbbdhx7" path="res://scenes/modules/module0/sprints/doi_mat_khau_nguoi_dung.tscn" id="4_f2i60"]
+
+[node name="QuanLyTaiKhoan" type="PanelContainer"]
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("1_quovl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_stretch_ratio = 20.0
+
+[node name="ThanhCongCu" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ThongTinCaNhan" type="Button" parent="VBoxContainer/ThanhCongCu"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("1_qw4ve")
+toggle_mode = true
+button_pressed = true
+text = "Thông Tin Cá Nhân"
+
+[node name="DoiMatKhau" type="Button" parent="VBoxContainer/ThanhCongCu"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("1_qw4ve")
+toggle_mode = true
+text = "Đổi Mật Khẩu"
+
+[node name="DanhSachNguoiDung" type="Button" parent="VBoxContainer/ThanhCongCu"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("1_qw4ve")
+toggle_mode = true
+text = "Danh Sách Người Dùng"
+
+[node name="ChucNang" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+tabs_visible = false
+
+[node name="ThongTinCaNhan" parent="VBoxContainer/ChucNang" instance=ExtResource("3_idoc8")]
+layout_mode = 2
+
+[node name="DoiMatKhauNguoiDung" parent="VBoxContainer/ChucNang" instance=ExtResource("4_f2i60")]
+visible = false
+layout_mode = 2
+
+[node name="DanhSachNguoiDung" parent="VBoxContainer/ChucNang" instance=ExtResource("1_20k20")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="VBoxContainer/ThanhCongCu/ThongTinCaNhan" to="." method="_on_thong_tin_ca_nhan_pressed"]
+[connection signal="pressed" from="VBoxContainer/ThanhCongCu/DoiMatKhau" to="." method="_on_doi_mat_khau_pressed"]
+[connection signal="pressed" from="VBoxContainer/ThanhCongCu/DanhSachNguoiDung" to="." method="_on_danh_sach_nguoi_dung_pressed"]
+[connection signal="tab_selected" from="VBoxContainer/ChucNang" to="." method="_on_chuc_nang_tab_selected"]

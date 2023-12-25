@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://nx38il5nf2o4"]
+
+[ext_resource type="Theme" uid="uid://d36q1w4haw802" path="res://assets/resources/themes/theme_cell.tres" id="1_cbrrr"]
+
+[node name="ChiTiet" type="VBoxContainer"]
+clip_contents = true
+size_flags_horizontal = 3
+theme = ExtResource("1_cbrrr")
