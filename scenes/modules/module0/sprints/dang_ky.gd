@@ -44,7 +44,7 @@ func _on_form_filled_in():
 	db.query("PRAGMA table_info(NguoiDung);")
 	result = db.query_result
 	for f in result:
-		if f["name"] != "MaNguoiDung":
+		if f["name"] != "MaNguoiDung" and f["name"] != "MaNhanKhau":
 			if f["name"] == "NgaySinh":
 				var nam = dien_nam.get_selected_id()
 				var thang = dien_thang.get_selected_id()

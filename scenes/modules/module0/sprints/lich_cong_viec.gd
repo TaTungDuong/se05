@@ -2,7 +2,7 @@ extends VBoxContainer
 
 @onready var vtable = $Table/HBoxContainer/DanhSachCongViec/Table/Table/VTable
 @onready var submenu_table = $Table/HBoxContainer2/SubmenuTable
-@onready var box_form = $ScrollContainer
+@onready var box_form = $HBoxContainer/VBoxContainer/ScrollContainer
 @onready var table_buttons = $Table/HBoxContainer2/TableButtons
 @onready var danh_sach = $Table
 const icon_submenu = preload("res://assets/sprites/ui/buttons/submenu.png")
@@ -89,15 +89,15 @@ const tableName = "CongViec"
 const query_select_all_tmp = "select * from " + tableName + " where Date(ThoiDiem) = 'yyyy-mm-dd%' order by ThoiDiem ASC;"
 var query_select_all = ""
 
-@onready var fields = $ScrollContainer/HBoxContainer/TruongThongTin
-@onready var form = $ScrollContainer/HBoxContainer/DienThongTinCongViec
+@onready var fields = $HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/TruongThongTin
+@onready var form = $HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec
 @onready var popup = $Popup/PopupMenu
 @onready var confirm = $Popup/ConfirmationDialog
 @onready var accept = $Popup/AcceptDialog
 @onready var file = $Popup/FileDialog
 @onready var doc_file = $Popup/DocFileDialog
 
-@onready var hien_tai = $PanelContainer/VBoxContainer/HBoxContainer/HienTai
+@onready var hien_tai = $HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer/HienTai
 var current_date
 
 func _ready():
@@ -109,18 +109,19 @@ func _ready():
 	window_hide()
 	Effect.set_ngay_thang_nam(nam_cv, thang_cv, ngay_cv)
 	readDataFromDB(query_select_all)
-	_on_submenu_table_pressed()
+#	_on_submenu_table_pressed()
 
 func _physics_process(_delta):
 	thang_nam.text = "Tháng " + str(current_month) + " Năm " + str(current_year)
 
-@onready var nam_cv = $ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay/Nam
-@onready var thang_cv = $ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay/Thang
-@onready var ngay_cv = $ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay/Ngay
-@onready var gio_cv = $ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Gio
+@onready var nam_cv = $HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay/Nam
+@onready var thang_cv = $HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay/Thang
+@onready var ngay_cv = $HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay/Ngay
+@onready var gio_cv = $HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Gio
 var row_inst = preload("res://scenes/global_elements/elements/row.tscn")
 var cell_inst = preload("res://scenes/global_elements/elements/cell.tscn")
 var cell_menu = preload("res://scenes/global_elements/elements/cell_menu.tscn")
+@export var hien_thi_ma_cong_viec = false
 func readDataFromDB(_query: String):
 	var nam = str(current_year)
 	var thang = str(current_month)
@@ -150,7 +151,7 @@ func readDataFromDB(_query: String):
 		vtable.get_node(r["name"]).add_child(row)
 		row.text = r["name"]
 		if "Ma" in r["name"]:
-			row.visible = false
+			row.visible = hien_thi_ma_cong_viec
 		row.input.text = current_filters[r["name"]]
 		row.filter_submitted.connect(_on_filter_submitted)
 		row.column_sorted.connect(_on_column_sorted)
@@ -169,7 +170,7 @@ func readDataFromDB(_query: String):
 			cell.id = i + 1
 			cell.cell_pressed.connect(_on_cell_pressed)
 			if "Ma" in c.name:
-				cell.visible = false
+				cell.visible = hien_thi_ma_cong_viec
 	set_ma_nguoi_dung()
 	
 var current_info
@@ -344,9 +345,9 @@ func _on_column_sorted(order: String):
 var current_month
 var current_year
 var current_day
-@onready var thang_nam = $PanelContainer/VBoxContainer/HBoxContainer2/ThangNam
-@onready var truoc_button = $PanelContainer/VBoxContainer/HBoxContainer2/Truoc
-@onready var sau_button = $PanelContainer/VBoxContainer/HBoxContainer2/Sau
+@onready var thang_nam = $HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/ThangNam
+@onready var truoc_button = $HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/Truoc
+@onready var sau_button = $HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/Sau
 func _on_truoc_pressed():
 	if current_month == 1:
 		if current_year == 2000:
@@ -370,7 +371,7 @@ func _on_sau_pressed():
 	truoc_button.disabled = false
 	set_days_in_month()
 
-@onready var ngay_trong_thang = $PanelContainer/VBoxContainer/NgayTrongThang
+@onready var ngay_trong_thang = $HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang
 @export var is_chosen = false
 signal day_pressed(row, col)
 func set_days_in_month():
@@ -418,16 +419,20 @@ func _on_day_chosen(day: Button):
 	day.button_pressed = true
 	current_day = int(day.text)
 	readDataFromDB(query_select_all)
+	await get_tree().create_timer(0.1).timeout
+	nam_cv.select(current_year + 1 - 2000)
+	thang_cv.select(current_month)
+	ngay_cv.select(current_day)
 
-@onready var ma_nguoi_dung = $ScrollContainer/HBoxContainer/DienThongTinCongViec/MaNguoiDung/MaNguoiDung
-@onready var chon_ma_nguoi_dung = $ScrollContainer/HBoxContainer/DienThongTinCongViec/MaNguoiDung/ChonMaNguoiDung
+@onready var ma_nguoi_dung = $HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/MaNguoiDung/MaNguoiDung
+@onready var chon_ma_nguoi_dung = $HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/MaNguoiDung/ChonMaNguoiDung
 func set_ma_nguoi_dung():
 	ma_nguoi_dung.text = str(DB.current_user["MaNguoiDung"])
 	chon_ma_nguoi_dung.clear()
 	chon_ma_nguoi_dung.add_item(str(DB.current_user["MaNguoiDung"]) + "|" + DB.current_user["HoVaTen"])
 ####################################################################################################
-@onready var them_button = $HBoxContainer/ThemButton
-@onready var sua_button = $HBoxContainer/SuaButton
+@onready var them_button = $HBoxContainer/VBoxContainer/HBoxContainer/ThemButton
+@onready var sua_button = $HBoxContainer/VBoxContainer/HBoxContainer/SuaButton
 func _process(_delta):
 	them_button.visible = (current_pk == null)
 	sua_button.visible = not (current_pk == null)

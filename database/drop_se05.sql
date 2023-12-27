@@ -18,4 +18,6 @@ DROP TABLE IF EXISTS "PhanThuongDipDacBiet";
 DROP TABLE IF EXISTS "LichSuPhanThuongDipDacBiet";
 DROP TABLE IF EXISTS "LichSuPhanThuongCuoiNamHoc";
 DROP TABLE IF EXISTS "PhanThuongCuoiNamHoc";
+DROP TABLE IF EXISTS "CongViec";
+DROP TABLE IF EXISTS "LichSuCongViec";
 COMMIT;

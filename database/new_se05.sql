@@ -18,6 +18,8 @@ DROP TABLE IF EXISTS "PhanThuongDipDacBiet";
 DROP TABLE IF EXISTS "LichSuPhanThuongDipDacBiet";
 DROP TABLE IF EXISTS "LichSuPhanThuongCuoiNamHoc";
 DROP TABLE IF EXISTS "PhanThuongCuoiNamHoc";
+DROP TABLE IF EXISTS "CongViec";
+DROP TABLE IF EXISTS "LichSuCongViec";
 
 CREATE TABLE IF NOT EXISTS "NguoiDung" (
 	"MaNguoiDung"	INTEGER UNIQUE,

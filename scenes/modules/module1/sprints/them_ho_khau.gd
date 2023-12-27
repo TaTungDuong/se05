@@ -10,6 +10,7 @@ const query_select_all = "select * from " + tableName + ";"
 @onready var popup = $Popup/PopupMenu
 @onready var confirm = $Popup/ConfirmationDialog
 @onready var accept = $Popup/AcceptDialog
+@onready var accept_fake = $Popup/AcceptDialog2
 @onready var file = $Popup/FileDialog
 
 func _ready():
@@ -128,6 +129,15 @@ func _on_form_filled_in(form):
 					info[f["name"]] = null
 					valid = false
 					popup.add_item("Chưa điền thông tin " + fields.get_node(f["name"]).text.to_lower().replace("*", "") + '!')
+				else:
+					if Effect.check_ma_nhan_khau(info[f["name"]]) == false:
+						valid = false
+						popup.add_item("Mã nhân khẩu này không tồn tại!")
+					else:
+						db.query("select * from " + tableName + " where MaChuHo = " + str(info[f["name"]]) + ";")
+						if db.query_result.size() != 0:
+							valid = false
+							popup.add_item("Mã nhân khẩu này đã là chủ hộ của hộ khẩu khác!")
 			else:
 				info[f["name"]] = form.get_node(f["name"]).text
 				if info[f["name"]] == "":
@@ -396,6 +406,16 @@ func _on_tai_len_button_pressed():
 func _on_confirmation_dialog_confirmed():
 	if current_form == form_insert:
 		Effect.insert(tableName, current_info, accept)
+		await get_tree().create_timer(1.0).timeout
+		var db = SQLite.new()
+		db.path = DB.db_name
+		db.open_db()
+		db.query("select * from NhanKhau where MaNhanKhau = " + current_info["MaChuHo"] + ";")
+		var info = db.query_result[0]
+		db.query("select * from HoKhau where MaChuHo = " + current_info["MaChuHo"] + ";")
+		info["MaHoKhau"] = str(db.query_result[0]["MaHoKhau"])
+		info["QuanHeVoiChuHo"] = "Chủ hộ"
+		Effect.edit("NhanKhau", current_info["MaChuHo"], info, accept_fake)
 	elif current_form == form_edit:
 		if confirm.dialog_text == "Xóa thông tin hộ khẩu này?\nThông tin đã xóa sẽ không thể truy hồi lại!":
 			Effect.delete(tableName, current_pk, accept)
@@ -410,7 +430,6 @@ func _on_confirmation_dialog_confirmed():
 		current_pk = null
 	reset_form(current_form)
 	readDataFromDB(query_select_all)
-
 
 
 

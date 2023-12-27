@@ -132,6 +132,15 @@ popup_window = true
 min_size = Vector2i(200, 70)
 theme = ExtResource("3_np6te")
 
+[node name="AcceptDialog2" type="AcceptDialog" parent="Popup"]
+title = "Thông báo"
+initial_position = 1
+size = Vector2i(320, 160)
+always_on_top = true
+popup_window = true
+min_size = Vector2i(200, 70)
+theme = ExtResource("3_np6te")
+
 [node name="FileDialog" type="FileDialog" parent="Popup"]
 title = "Open a File"
 initial_position = 1

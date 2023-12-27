@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cs5gnf04ysi43"]
+[gd_scene load_steps=32 format=3 uid="uid://cs5gnf04ysi43"]
 
 [ext_resource type="Texture2D" uid="uid://bhokghs8m3a6a" path="res://assets/sprites/ui/backgrounds/hust.png" id="1_73qr1"]
 [ext_resource type="Script" path="res://scenes/modules/module0/home.gd" id="1_f5ffj"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c78ph1l0oxvwj" path="res://scenes/modules/module1/quan_ly_ho_khau.tscn" id="8_y5k15"]
 [ext_resource type="FontFile" uid="uid://dl36jwef0d627" path="res://assets/resources/fonts/arial.ttf" id="9_w1h01"]
 [ext_resource type="PackedScene" uid="uid://bejuvkbdm02ya" path="res://scenes/modules/module0/sprints/ho_so_nguoi_dung.tscn" id="11_iusas"]
+[ext_resource type="Texture2D" uid="uid://ynhb8h6kgtvj" path="res://assets/sprites/ui/buttons/exit.png" id="12_0ojkm"]
 [ext_resource type="PackedScene" uid="uid://8g1y0f6u4v1i" path="res://scenes/modules/module0/sprints/doi_mat_khau.tscn" id="12_3oby4"]
 [ext_resource type="PackedScene" uid="uid://cinuy171tewx3" path="res://scenes/modules/module0/quan_ly_tai_khoan.tscn" id="13_e1ivs"]
 [ext_resource type="PackedScene" uid="uid://c1p8flqoobh03" path="res://scenes/modules/module2/quan_ly_thu_chi.tscn" id="13_qwild"]
@@ -282,7 +283,26 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_dsxsa")
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
 layout_mode = 2
-theme_override_constants/separation = 128
+theme_override_constants/separation = 64
+
+[node name="DangXuat" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
+focus_mode = 0
+theme = ExtResource("6_c7e3f")
+theme_override_font_sizes/font_size = 16
+text = "Thoát"
+icon = ExtResource("12_0ojkm")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Buffer4" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dsxsa")
 
 [node name="Buffer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu"]
 layout_mode = 2
@@ -499,6 +519,7 @@ offset_right = 832.0
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu/ThuChi" to="." method="_on_thu_chi_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu/PhanThuong" to="." method="_on_phan_thuong_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu/TaiKhoan" to="." method="_on_tai_khoan_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ThanhCongCu/ThanhCongCu/ThanhCongCu/DangXuat" to="." method="_on_dang_xuat_pressed"]
 [connection signal="confirmed" from="Popup/ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
 [connection signal="pressed" from="Popup/Avatar/VBoxContainer/VBoxContainer/ThongTin" to="." method="_on_thong_tin_pressed"]
 [connection signal="pressed" from="Popup/Avatar/VBoxContainer/VBoxContainer/DoiMatKhau" to="." method="_on_doi_mat_khau_pressed"]

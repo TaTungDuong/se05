@@ -6,8 +6,10 @@ var db_name = "res://database/se05"
 var sql_file_path = "res://database/se05.sql"
 var new_sql_file_path = "res://database/new_se05.sql"
 var current_user
+var current_selected_pk
 
 func _ready():
+	current_selected_pk = null
 	if test == 0:
 		get_current_info("se05")
 	elif test == 1:

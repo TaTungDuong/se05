@@ -26,8 +26,8 @@ func readDataFromDB(query):
 	var row 
 	db.query("PRAGMA table_info(" + tableName + ");")
 	for r in db.query_result:
-		if r["name"] != "ChucVu" and r["name"] != "NhoTaiKhoan":
-			if (r["name"] == "TenDangNhap" or r["name"] == "MatKhau") and DB.current_user["ChucVu"] == 2:
+		if r["name"] != "NhoTaiKhoan":
+			if (r["name"] == "TenDangNhap" or r["name"] == "MatKhau" or r["name"] == "ChucVu") and DB.current_user["ChucVu"] == 2:
 				continue
 			if vtable.has_node(r["name"]) == false:
 				row = row_inst.instantiate()
@@ -81,6 +81,8 @@ func _on_cell_pressed(cell):
 		if c.name == "Ma" + tableName:
 			var pk = c.get_child(cell.id).text
 			current_pk = pk
+			DB.current_selected_pk = pk
+	_on_doi_chuc_vu_opened()
 
 var current_filters = {}
 func reset_filters():
@@ -151,6 +153,61 @@ func set_buttons_for_role():
 		xoa_button.disabled = true
 		xoahet_button.disabled = true
 
+func _on_doi_chuc_vu_opened():
+	if str(DB.current_user["ChucVu"]) == "0" and str(DB.current_user["MaNguoiDung"]) != str(DB.current_selected_pk):
+		$Popup/DoiChucVu.visible = true
+		var tween = create_tween()
+		tween.tween_property(
+			$Popup/DoiChucVu,
+			"modulate",
+			Color(1, 1, 1, 1),
+			0.5,
+		).from_current(	
+			).set_ease(
+			Tween.EASE_IN_OUT
+		).set_trans(
+			Tween.TRANS_LINEAR
+		)
+		tween.tween_property(
+			$Popup/DoiChucVu,
+			"position",
+			Vector2(448, 128),
+			0.5,
+		).from_current(	
+			).set_ease(
+			Tween.EASE_IN_OUT
+		).set_trans(
+			Tween.TRANS_LINEAR
+		)
+
+func _on_doi_chuc_vu_closed():
+	var tween = create_tween()
+	tween.tween_property(
+		$Popup/DoiChucVu,
+		"position",
+		Vector2(448, 0),
+		0.5,
+	).from_current(	
+		).set_ease(
+		Tween.EASE_IN_OUT
+	).set_trans(
+		Tween.TRANS_LINEAR
+	)
+	tween.tween_property(
+		$Popup/DoiChucVu,
+		"modulate",
+		Color(1, 1, 1, 0),
+		0.5,
+	).from_current(	
+		).set_ease(
+		Tween.EASE_IN_OUT
+	).set_trans(
+		Tween.TRANS_LINEAR
+	)
+	await tween.finished
+	$Popup/DoiChucVu.visible = false
+	_on_lam_moi_button_pressed()
+
 func window_hide():
 	popup.clear()
 	popup.hide()
@@ -191,11 +248,11 @@ func _on_confirmation_dialog_confirmed():
 	db.path = DB.db_name
 	db.open_db()
 	if confirm.dialog_text == "Xóa thông tin người dùng này?\nThông tin đã xóa sẽ không thể truy hồi lại!":
-		if current_pk == DB.current_user["Ma" + tableName]:
+		if str(current_pk) == str(DB.current_user["Ma" + tableName]):
 			accept.dialog_text = "Không thể xóa tài khoản đang đăng nhập!"
 			accept.show()
 		else:
-			db.query("delete from " + tableName + " where Ma" +tableName + " = " + current_pk + " and ChucVu != 0;")
+			db.query("delete from " + tableName + " where Ma" +tableName + " = " + current_pk + " and ChucVu <> 0;")
 	if confirm.dialog_text == "Xóa hết thông tin người dùng?\nThông tin đã xóa sẽ không thể truy hồi lại!":
 		db.query("delete from " + tableName + " where ChucVu <> 0;")
 	if confirm.dialog_text == "Lưu thông tin người dùng về máy?":

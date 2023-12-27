@@ -97,11 +97,12 @@ bg_color = Color(1, 1, 1, 1)
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_oxso1")
 
 [node name="LichCongViec" type="VBoxContainer"]
-offset_right = 720.0
-offset_bottom = 608.0
+offset_right = 1280.0
+offset_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 10.0
 script = ExtResource("1_swp2e")
+hien_thi_ma_cong_viec = true
 
 [node name="Popup" type="Node2D" parent="."]
 
@@ -157,328 +158,17 @@ cancel_button_text = "Hủy"
 access = 2
 filters = PackedStringArray(".doc; Word Files")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_up3vj")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="HienTai" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "   "
-flat = true
-
-[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 2
-alignment = 1
-
-[node name="Buffer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.0
-
-[node name="Truoc" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-text = "   "
-icon = ExtResource("12_uocey")
-icon_alignment = 1
-
-[node name="ThangNam" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 20.0
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "   "
-flat = true
-
-[node name="Sau" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-text = "   "
-icon = ExtResource("3_rn168")
-alignment = 2
-icon_alignment = 1
-
-[node name="Buffer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.0
-
-[node name="NgayTrongTuan" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="ChuNhat" type="Button" parent="PanelContainer/VBoxContainer/NgayTrongTuan"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "Sun"
-flat = true
-
-[node name="ThuHai" type="Button" parent="PanelContainer/VBoxContainer/NgayTrongTuan"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "Mon"
-flat = true
-
-[node name="ThuBa" type="Button" parent="PanelContainer/VBoxContainer/NgayTrongTuan"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "Tue"
-flat = true
-
-[node name="ThuTu" type="Button" parent="PanelContainer/VBoxContainer/NgayTrongTuan"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "Wed"
-flat = true
-
-[node name="ThuNam" type="Button" parent="PanelContainer/VBoxContainer/NgayTrongTuan"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "Thu"
-flat = true
-
-[node name="ThuSau" type="Button" parent="PanelContainer/VBoxContainer/NgayTrongTuan"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "Fri"
-flat = true
-
-[node name="ThuBay" type="Button" parent="PanelContainer/VBoxContainer/NgayTrongTuan"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "Sat"
-flat = true
-
-[node name="NgayTrongThang" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="NgayTrongTuan1" type="HBoxContainer" parent="PanelContainer/VBoxContainer/NgayTrongThang"]
-layout_mode = 2
-alignment = 1
-
-[node name="1" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="2" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="3" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="4" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="5" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="6" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="7" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="NgayTrongTuan2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/NgayTrongThang"]
-layout_mode = 2
-alignment = 1
-
-[node name="1" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="2" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="3" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="4" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="5" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="6" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="7" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="NgayTrongTuan3" type="HBoxContainer" parent="PanelContainer/VBoxContainer/NgayTrongThang"]
-layout_mode = 2
-alignment = 1
-
-[node name="1" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="2" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="3" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="4" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="5" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="6" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="7" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="NgayTrongTuan4" type="HBoxContainer" parent="PanelContainer/VBoxContainer/NgayTrongThang"]
-layout_mode = 2
-alignment = 1
-
-[node name="1" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="2" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="3" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="4" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="5" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="6" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="7" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="NgayTrongTuan5" type="HBoxContainer" parent="PanelContainer/VBoxContainer/NgayTrongThang"]
-layout_mode = 2
-alignment = 1
-
-[node name="1" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="2" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="3" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="4" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="5" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="6" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="7" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="NgayTrongTuan6" type="HBoxContainer" parent="PanelContainer/VBoxContainer/NgayTrongThang"]
-layout_mode = 2
-alignment = 1
-
-[node name="1" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="2" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="3" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="4" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="5" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="6" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="7" parent="PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
-layout_mode = 2
-
-[node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="ThangNam" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-theme = ExtResource("4_7aw27")
-theme_override_font_sizes/font_size = 18
-disabled = true
-text = "   "
-flat = true
-alignment = 2
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="ThemButton" type="Button" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ThemButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -488,7 +178,7 @@ icon = ExtResource("2_hig55")
 alignment = 0
 expand_icon = true
 
-[node name="SuaButton" type="Button" parent="HBoxContainer"]
+[node name="SuaButton" type="Button" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 texture_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
@@ -499,31 +189,31 @@ icon = ExtResource("3_tqibu")
 alignment = 0
 expand_icon = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 4
 
-[node name="TruongThongTin" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+[node name="TruongThongTin" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 4
 alignment = 1
 
-[node name="Buffer" type="PanelContainer" parent="ScrollContainer/HBoxContainer/TruongThongTin"]
+[node name="Buffer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 
-[node name="MaNguoiDung" type="Button" parent="ScrollContainer/HBoxContainer/TruongThongTin"]
+[node name="MaNguoiDung" type="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_7aw27")
@@ -532,7 +222,7 @@ text = "Mã Người Dùng*"
 flat = true
 alignment = 0
 
-[node name="NoiDung" type="Button" parent="ScrollContainer/HBoxContainer/TruongThongTin"]
+[node name="NoiDung" type="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_7aw27")
@@ -541,7 +231,7 @@ text = "Nội Dung Công Việc*"
 flat = true
 alignment = 0
 
-[node name="NguoiThucHien" type="Button" parent="ScrollContainer/HBoxContainer/TruongThongTin"]
+[node name="NguoiThucHien" type="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_7aw27")
@@ -550,10 +240,10 @@ text = "Người Thực Hiện"
 flat = true
 alignment = 0
 
-[node name="ThoiDiem" type="VBoxContainer" parent="ScrollContainer/HBoxContainer/TruongThongTin"]
+[node name="ThoiDiem" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
 layout_mode = 2
 
-[node name="Ngay" type="Button" parent="ScrollContainer/HBoxContainer/TruongThongTin/ThoiDiem"]
+[node name="Ngay" type="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/TruongThongTin/ThoiDiem"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_7aw27")
@@ -562,7 +252,7 @@ text = "Ngày*"
 flat = true
 alignment = 0
 
-[node name="Gio" type="Button" parent="ScrollContainer/HBoxContainer/TruongThongTin/ThoiDiem"]
+[node name="Gio" type="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/TruongThongTin/ThoiDiem"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_7aw27")
@@ -571,7 +261,7 @@ text = "Giờ*"
 flat = true
 alignment = 0
 
-[node name="GhiChu" type="Button" parent="ScrollContainer/HBoxContainer/TruongThongTin"]
+[node name="GhiChu" type="Button" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_7aw27")
@@ -580,12 +270,12 @@ text = "Ghi Chú"
 flat = true
 alignment = 0
 
-[node name="Buffer2" type="PanelContainer" parent="ScrollContainer/HBoxContainer/TruongThongTin"]
+[node name="Buffer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/TruongThongTin"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
 
-[node name="DienThongTinCongViec" type="VBoxContainer" parent="ScrollContainer/HBoxContainer"]
+[node name="DienThongTinCongViec" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -593,15 +283,15 @@ size_flags_stretch_ratio = 20.0
 theme_override_constants/separation = 4
 alignment = 1
 
-[node name="Buffer" type="PanelContainer" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec"]
+[node name="Buffer" type="PanelContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
 
-[node name="MaNguoiDung" type="HBoxContainer" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec"]
+[node name="MaNguoiDung" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec"]
 layout_mode = 2
 
-[node name="MaNguoiDung" type="LineEdit" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec/MaNguoiDung"]
+[node name="MaNguoiDung" type="LineEdit" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/MaNguoiDung"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("5_tvjig")
@@ -609,7 +299,7 @@ editable = false
 caret_blink = true
 caret_blink_interval = 0.5
 
-[node name="ChonMaNguoiDung" type="OptionButton" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec/MaNguoiDung"]
+[node name="ChonMaNguoiDung" type="OptionButton" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/MaNguoiDung"]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -619,24 +309,24 @@ item_count = 1
 popup/item_0/text = ""
 popup/item_0/id = 0
 
-[node name="NoiDung" type="LineEdit" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec"]
+[node name="NoiDung" type="LineEdit" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec"]
 layout_mode = 2
 theme = ExtResource("5_tvjig")
 caret_blink = true
 
-[node name="NguoiThucHien" type="LineEdit" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec"]
+[node name="NguoiThucHien" type="LineEdit" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec"]
 layout_mode = 2
 theme = ExtResource("5_tvjig")
 caret_blink = true
 
-[node name="ThoiDiem" type="VBoxContainer" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec"]
+[node name="ThoiDiem" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec"]
 layout_mode = 2
 
-[node name="Ngay" type="HBoxContainer" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem"]
+[node name="Ngay" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem"]
 layout_mode = 2
 focus_mode = 2
 
-[node name="Nam" type="OptionButton" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay"]
+[node name="Nam" type="OptionButton" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("6_5o80d")
@@ -647,7 +337,7 @@ popup/item_0/id = 0
 popup/item_0/disabled = true
 popup/item_0/separator = true
 
-[node name="Thang" type="OptionButton" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay"]
+[node name="Thang" type="OptionButton" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("6_5o80d")
@@ -658,7 +348,7 @@ popup/item_0/id = 0
 popup/item_0/disabled = true
 popup/item_0/separator = true
 
-[node name="Ngay" type="OptionButton" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay"]
+[node name="Ngay" type="OptionButton" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem/Ngay"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("6_5o80d")
@@ -669,21 +359,340 @@ popup/item_0/id = 0
 popup/item_0/disabled = true
 popup/item_0/separator = true
 
-[node name="Gio" type="LineEdit" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem"]
+[node name="Gio" type="LineEdit" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec/ThoiDiem"]
 layout_mode = 2
 theme = ExtResource("5_tvjig")
 placeholder_text = "HH:MM:SS"
 caret_blink = true
 
-[node name="GhiChu" type="LineEdit" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec"]
+[node name="GhiChu" type="LineEdit" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec"]
 layout_mode = 2
 theme = ExtResource("5_tvjig")
 caret_blink = true
 
-[node name="Buffer2" type="PanelContainer" parent="ScrollContainer/HBoxContainer/DienThongTinCongViec"]
+[node name="Buffer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer/ScrollContainer/HBoxContainer/DienThongTinCongViec"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_up3vj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HienTai" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "   "
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Buffer" type="PanelContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="Truoc" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+text = "   "
+icon = ExtResource("12_uocey")
+icon_alignment = 1
+
+[node name="ThangNam" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 20.0
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "   "
+flat = true
+
+[node name="Sau" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+text = "   "
+icon = ExtResource("3_rn168")
+alignment = 2
+icon_alignment = 1
+
+[node name="Buffer2" type="PanelContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="NgayTrongTuan" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ChuNhat" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongTuan"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Sun"
+flat = true
+
+[node name="ThuHai" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongTuan"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Mon"
+flat = true
+
+[node name="ThuBa" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongTuan"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Tue"
+flat = true
+
+[node name="ThuTu" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongTuan"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Wed"
+flat = true
+
+[node name="ThuNam" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongTuan"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Thu"
+flat = true
+
+[node name="ThuSau" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongTuan"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Fri"
+flat = true
+
+[node name="ThuBay" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongTuan"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Sat"
+flat = true
+
+[node name="NgayTrongThang" type="VBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NgayTrongTuan1" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang"]
+layout_mode = 2
+alignment = 1
+
+[node name="1" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="2" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="3" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="4" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="5" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="6" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="7" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan1" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="NgayTrongTuan2" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang"]
+layout_mode = 2
+alignment = 1
+
+[node name="1" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="2" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="3" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="4" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="5" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="6" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="7" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan2" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="NgayTrongTuan3" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang"]
+layout_mode = 2
+alignment = 1
+
+[node name="1" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="2" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="3" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="4" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="5" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="6" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="7" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan3" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="NgayTrongTuan4" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang"]
+layout_mode = 2
+alignment = 1
+
+[node name="1" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="2" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="3" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="4" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="5" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="6" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="7" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan4" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="NgayTrongTuan5" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang"]
+layout_mode = 2
+alignment = 1
+
+[node name="1" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="2" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="3" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="4" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="5" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="6" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="7" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan5" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="NgayTrongTuan6" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang"]
+layout_mode = 2
+alignment = 1
+
+[node name="1" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="2" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="3" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="4" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="5" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="6" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="7" parent="HBoxContainer/PanelContainer/VBoxContainer/NgayTrongThang/NgayTrongTuan6" instance=ExtResource("6_eyed7")]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ThangNam" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("4_7aw27")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "   "
+flat = true
+alignment = 2
 
 [node name="Table" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -818,10 +827,9 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.01
 
 [connection signal="confirmed" from="Popup/ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Truoc" to="." method="_on_truoc_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Sau" to="." method="_on_sau_pressed"]
-[connection signal="pressed" from="HBoxContainer/ThemButton" to="." method="_on_them_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/SuaButton" to="." method="_on_sua_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/ThemButton" to="." method="_on_them_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/SuaButton" to="." method="_on_sua_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/Truoc" to="." method="_on_truoc_pressed"]
+[connection signal="pressed" from="HBoxContainer/PanelContainer/VBoxContainer/HBoxContainer2/Sau" to="." method="_on_sau_pressed"]
 [connection signal="pressed" from="Table/HBoxContainer2/TableButtons/HBoxContainer/XoaButton" to="." method="_on_xoa_button_pressed"]
 [connection signal="pressed" from="Table/HBoxContainer2/TableButtons/HBoxContainer/XoaHetButton" to="." method="_on_xoa_het_button_pressed"]
-[connection signal="pressed" from="Table/HBoxContainer2/SubmenuTable" to="." method="_on_submenu_table_pressed"]

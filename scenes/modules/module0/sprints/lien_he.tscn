@@ -1,0 +1,475 @@
+[gd_scene load_steps=13 format=3 uid="uid://b7hxisrfrqp86"]
+
+[ext_resource type="Script" path="res://scenes/modules/module0/sprints/lien_he.gd" id="1_3sqwe"]
+[ext_resource type="Theme" uid="uid://b0f85lxjcftcx" path="res://assets/resources/themes/theme_popup.tres" id="1_sqkjq"]
+[ext_resource type="Texture2D" uid="uid://cu3wmppuq54me" path="res://assets/sprites/ui/bg_white.png" id="2_okv72"]
+[ext_resource type="Theme" uid="uid://brdiy7ttotod7" path="res://assets/resources/themes/theme_button.tres" id="3_dlfth"]
+[ext_resource type="Texture2D" uid="uid://i311ycl1lowb" path="res://assets/sprites/ui/buttons/edit.png" id="4_58hqs"]
+[ext_resource type="Theme" uid="uid://cvxiiwjwnm8g" path="res://assets/resources/themes/theme_field.tres" id="6_hjdpw"]
+[ext_resource type="Texture2D" uid="uid://bsh2b1emkklws" path="res://assets/sprites/ui/buttons/people.png" id="7_hmraa"]
+[ext_resource type="Texture2D" uid="uid://cj8dc5d7bncld" path="res://assets/sprites/ui/buttons/location.png" id="8_sx1pu"]
+[ext_resource type="Texture2D" uid="uid://cfaynch82rdmq" path="res://assets/sprites/ui/buttons/phone-call.png" id="9_swvec"]
+[ext_resource type="Texture2D" uid="uid://dxhtsugyjmo6f" path="res://assets/sprites/ui/buttons/email.png" id="10_5agk4"]
+[ext_resource type="Texture2D" uid="uid://33ebcndf64pj" path="res://assets/sprites/ui/backgrounds/map.png" id="12_d3fqd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82xpq"]
+bg_color = Color(0.894118, 0.894118, 0.894118, 1)
+shadow_size = 4
+
+[node name="LienHe" type="VBoxContainer"]
+offset_right = 1280.0
+offset_bottom = 1792.0
+script = ExtResource("1_3sqwe")
+
+[node name="Popup" type="Node2D" parent="."]
+
+[node name="PopupMenu" type="PopupMenu" parent="Popup"]
+title = "Warning!"
+initial_position = 1
+size = Vector2i(320, 160)
+unresizable = false
+borderless = false
+always_on_top = true
+theme = ExtResource("1_sqkjq")
+hide_on_item_selection = false
+item_count = 1
+item_0/text = "sdasdas"
+item_0/id = 0
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Popup"]
+title = "Xác nhận"
+initial_position = 1
+size = Vector2i(320, 160)
+always_on_top = true
+popup_window = true
+theme = ExtResource("1_sqkjq")
+ok_button_text = "Có"
+cancel_button_text = "Không"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="Popup"]
+title = "Thông báo"
+initial_position = 1
+size = Vector2i(320, 160)
+always_on_top = true
+popup_window = true
+min_size = Vector2i(200, 70)
+theme = ExtResource("1_sqkjq")
+
+[node name="FileDialog" type="FileDialog" parent="Popup"]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(720, 480)
+theme = ExtResource("1_sqkjq")
+ok_button_text = "Open"
+cancel_button_text = "Hủy"
+file_mode = 0
+access = 2
+filters = PackedStringArray(".xlsx; Excel Files")
+
+[node name="DocFileDialog" type="FileDialog" parent="Popup"]
+initial_position = 1
+size = Vector2i(720, 480)
+theme = ExtResource("1_sqkjq")
+ok_button_text = "Lưu"
+cancel_button_text = "Hủy"
+access = 2
+filters = PackedStringArray(".doc; Word Files")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(5, 2.8125)
+texture = ExtResource("2_okv72")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SuaButton" type="Button" parent="HBoxContainer"]
+visible = false
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("3_dlfth")
+disabled = true
+toggle_mode = true
+text = "Sửa thông tin"
+icon = ExtResource("4_58hqs")
+alignment = 0
+expand_icon = true
+
+[node name="LuuButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 24
+text = "Nếu bạn cần hỗ trợ, hãy liên hệ. Chúng tôi sẽ cố gắng phản hồi sớm nhất !"
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+theme_override_constants/separation = 32
+
+[node name="SE05" type="PanelContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_82xpq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer/SE05"]
+layout_mode = 2
+
+[node name="Icon" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/SE05/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+icon = ExtResource("7_hmraa")
+flat = true
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer/SE05/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="VanPhong" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/SE05/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "NHÓM PHÁT TRIỂN SE05"
+flat = true
+alignment = 0
+
+[node name="DiaChi" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/SE05/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Địa chỉ: Nhà D8-301"
+icon = ExtResource("8_sx1pu")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="DienThoai" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/SE05/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Điện thoại: 0988 795 275"
+icon = ExtResource("9_swvec")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Email" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/SE05/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Email: Duong.TT215267@hust.edu.vn"
+icon = ExtResource("10_5agk4")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="VanPhongDaiHoc" type="PanelContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_82xpq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer/VanPhongDaiHoc"]
+layout_mode = 2
+
+[node name="Icon" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/VanPhongDaiHoc/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+icon = ExtResource("7_hmraa")
+flat = true
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer/VanPhongDaiHoc/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="VanPhong" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/VanPhongDaiHoc/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "VĂN PHÒNG ĐẠI HỌC"
+flat = true
+alignment = 0
+
+[node name="DiaChi" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/VanPhongDaiHoc/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Địa chỉ: Nhà C1-114, 215, 217"
+icon = ExtResource("8_sx1pu")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="DienThoai" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/VanPhongDaiHoc/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Điện thoại: 0243.8692222"
+icon = ExtResource("9_swvec")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Email" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/VanPhongDaiHoc/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Email: vp@hust.edu.vn"
+icon = ExtResource("10_5agk4")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="BanHopTacDoiNgoai" type="PanelContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_82xpq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer/BanHopTacDoiNgoai"]
+layout_mode = 2
+
+[node name="Icon" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/BanHopTacDoiNgoai/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+icon = ExtResource("7_hmraa")
+flat = true
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer/BanHopTacDoiNgoai/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="VanPhong" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/BanHopTacDoiNgoai/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "BAN HỢP TÁC ĐỐI NGOẠI"
+flat = true
+alignment = 0
+
+[node name="DiaChi" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/BanHopTacDoiNgoai/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Địa chỉ: Nhà C1-212"
+icon = ExtResource("8_sx1pu")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="DienThoai" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/BanHopTacDoiNgoai/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Điện thoại: 04.38:69 3796, 3868 3197"
+icon = ExtResource("9_swvec")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Email" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/BanHopTacDoiNgoai/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Email: htdn@hust.edu.vn"
+icon = ExtResource("10_5agk4")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="TrungTam" type="PanelContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_82xpq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer/TrungTam"]
+layout_mode = 2
+
+[node name="Icon" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/TrungTam/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+icon = ExtResource("7_hmraa")
+flat = true
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer/TrungTam/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="VanPhong" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/TrungTam/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "TRUNG TÂM TRUYỀN THÔNG & TRI THỨC SỐ"
+flat = true
+alignment = 0
+
+[node name="DiaChi" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/TrungTam/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Địa chỉ: Thư viện Tạ Quang Bửu"
+icon = ExtResource("8_sx1pu")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="DienThoai" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/TrungTam/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Điện thoại: 02422153287"
+icon = ExtResource("9_swvec")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="Email" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/TrungTam/HBoxContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme = ExtResource("6_hjdpw")
+theme_override_font_sizes/font_size = 18
+disabled = true
+text = "Email: tttts@hust.edu.vn"
+icon = ExtResource("10_5agk4")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="BanDo" type="PanelContainer" parent="ScrollContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_82xpq")
+
+[node name="Map" type="TextureRect" parent="ScrollContainer/VBoxContainer/VBoxContainer/BanDo"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+texture = ExtResource("12_d3fqd")
+expand_mode = 5
+
+[node name="Map" type="Button" parent="ScrollContainer/VBoxContainer/VBoxContainer/BanDo/Map"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+flat = true
+
+[node name="BufferBottom" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/VBoxContainer/BanDo/Map/Map" to="." method="_on_map_pressed"]
