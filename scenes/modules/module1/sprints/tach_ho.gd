@@ -442,6 +442,10 @@ func _on_confirmation_dialog_confirmed():
 		db.query("select * from NhanKhau where MaNhanKhau = " + str(f) + ";")
 		var info = db.query_result[0]
 		info["MaHoKhau"] = new_id
+		if str(f) == str(current_info["MaChuHo"]):
+			info["QuanHeVoiChuHo"] = "Chủ hộ"
+		else:
+			info["QuanHeVoiChuHo"] = null
 		Effect.edit("NhanKhau", f, info, accept)
 	
 	Effect.split(current_pk, new_id)

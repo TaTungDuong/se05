@@ -220,6 +220,10 @@ func _on_form_filled_in(form):
 					if info[f["name"]] == null:
 						valid = false
 						popup.add_item("Chưa điền thông tin " + fields.get_node(f["name"]).text.to_lower().replace("*", "") + '!')
+				if f["name"] == "SoTien":
+					if Effect.is_numeric(info[f["name"]]) == false:
+						valid = false
+						popup.add_item("Thông tin " + fields.get_node(f["name"]).text.to_lower().replace("*", "") + ' không hợp lệ!')		
 	release_focus_form(form)
 	if valid == true:
 		current_info = info

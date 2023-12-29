@@ -136,7 +136,7 @@ func _on_form_filled_in(form):
 				if f["name"] == "SoTien":
 					if Effect.is_numeric(info[f["name"]]) == false:
 						valid = false
-						popup.add_item("Thông tin " + fields.get_node(f["name"]).text.to_lower().replace("*", "") + 'không hợp lệ!')	
+						popup.add_item("Thông tin " + fields.get_node(f["name"]).text.to_lower().replace("*", "") + ' không hợp lệ!')	
 				if info[f["name"]] == "":
 					info[f["name"]] = null
 				if "*" in fields.get_node(f["name"]).text:

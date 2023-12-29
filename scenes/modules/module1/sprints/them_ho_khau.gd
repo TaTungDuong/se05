@@ -133,7 +133,7 @@ func _on_form_filled_in(form):
 					if Effect.check_ma_nhan_khau(info[f["name"]]) == false:
 						valid = false
 						popup.add_item("Mã nhân khẩu này không tồn tại!")
-					else:
+					elif current_form == form_insert:
 						db.query("select * from " + tableName + " where MaChuHo = " + str(info[f["name"]]) + ";")
 						if db.query_result.size() != 0:
 							valid = false

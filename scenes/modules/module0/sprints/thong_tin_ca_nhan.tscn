@@ -787,4 +787,5 @@ theme = ExtResource("12_uuvv3")
 [connection signal="toggled" from="HBoxContainer/VBoxContainer/SuaCheckButton" to="." method="_on_sua_check_button_toggled"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/HBoxContainer/LamMoiButton" to="." method="_on_lam_moi_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/HBoxContainer/LuuButton" to="." method="_on_luu_button_pressed"]
+[connection signal="text_changed" from="HBoxContainer/VBoxContainer2/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/ThongTinNguoiDung/MaNhanKhau" to="." method="_on_ma_nhan_khau_text_changed"]
 [connection signal="toggled" from="HBoxContainer/VBoxContainer2/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/ThongTinNguoiDung/BufferHienThiButton" to="." method="_on_buffer_hien_thi_button_toggled"]

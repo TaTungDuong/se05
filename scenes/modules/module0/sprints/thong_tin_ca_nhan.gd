@@ -74,6 +74,31 @@ func readDataFromDB(query):
 			else:
 				f.text = str(result[0][f.name])
 
+func _on_ma_nhan_khau_text_changed(text: String):
+	if Effect.check_ma_nhan_khau(text) == false:
+		return
+	var db = SQLite.new()
+	db.path = DB.db_name
+	db.open_db()
+	
+	var query = query_select_all
+	query = query.replace("ID", text)
+	db.query(query)
+	var result = db.query_result
+	for f in thong_tin_nhan_khau.get_children():
+		if "Buffer" not in f.name:
+			if f.name == "NgaySinh":
+				var dict = Effect.extract_date(result[0][f.name])
+				nam_sinh_nhan_khau.select(dict["nam"] + 1 - 1900)
+				thang_sinh_nhan_khau.select(dict["thang"])
+				ngay_sinh_nhan_khau.select(dict["ngay"])
+			elif f.name == "GioiTinh":
+				gioi_tinh_nhan_khau.select(int(result[0][f.name]) + 1)
+			elif result[0][f.name] == null:
+					f.text = ""
+			else:
+				f.text = str(result[0][f.name])
+
 @onready var luu_button = $HBoxContainer/VBoxContainer2/HBoxContainer/LuuButton
 @onready var captcha_box = $HBoxContainer/VBoxContainer2/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/ThongTinNguoiDung/BufferCaptchaBox
 @onready var mau_captcha = $HBoxContainer/VBoxContainer2/PanelContainer/ScrollContainer/VBoxContainer/HBoxContainer/ThongTinNguoiDung/BufferCaptchaBox/HBoxContainer/MauCaptcha
